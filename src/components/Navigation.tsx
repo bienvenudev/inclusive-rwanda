@@ -1,24 +1,19 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
-import Button from './Button';
 
-interface NavigationProps {
-  currentPage: string;
-  onNavigate: (page: string) => void;
-}
+const Navigation: React.FC = () => {
+  const location = useLocation();
 
-const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
   const navItems = [
-    { id: 'home', label: 'Home', page: 'home' },
-    { id: 'why-matters', label: 'Why It Matters', page: 'why-matters' },
-    { id: 'quick-start', label: 'Quick Start', page: 'quick-start' },
-    { id: 'resources', label: 'Resources', page: 'resources' },
+    { id: 'home', label: 'Home', path: '/' },
+    { id: 'why-matters', label: 'Why It Matters', path: '/why-it-matters' },
+    { id: 'quick-start', label: 'Quick Start', path: '/quick-start' },
+    { id: 'resources', label: 'Resources', path: '/resources' },
   ];
 
-  const handleNavigate = (page: string) => {
-    onNavigate(page);
-  };
+  const isCurrentPage = (path: string) => location.pathname === path;
 
   return (
     <>
@@ -30,28 +25,24 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
         <div className="container ">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <Button
-                onClick={() => handleNavigate('home')}
-                variant="ghost"
-                className="p-2 text-white text-xl font-bold"
-                aria-label="Inclusive Rwanda - Go to home page"
-              >
+              <Link to="/" className="p-2 text-white text-xl font-bold hover:opacity-80 transition-opacity duration-200">
                 <span className="text-blue-500">Inclusive Rwanda</span>
-              </Button>
+              </Link>
             </div>
 
             <nav className="hidden md:flex space-x-2" role="navigation" aria-label="Main navigation">
               {navItems.map((item) => (
-                <Button
+                <Link
                   key={item.id}
-                  variant={currentPage === item.page ? 'secondary' : 'ghost'}
-                  size="md"
-                  onClick={() => handleNavigate(item.page)}
-                  aria-current={currentPage === item.page ? 'page' : undefined}
-                  className={currentPage === item.page ? 'text-blue-500 font-semibold' : ''}
+                  to={item.path}
+                  className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900 ${isCurrentPage(item.path)
+                      ? 'bg-gray-800 text-blue-500 font-semibold border border-gray-600'
+                      : 'text-gray-200 hover:text-gray-50 hover:bg-gray-800'
+                    }`}
+                  aria-current={isCurrentPage(item.path) ? 'page' : undefined}
                 >
                   {item.label}
-                </Button>
+                </Link>
               ))}
             </nav>
 
@@ -68,16 +59,16 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
                 <div className="py-1">
                   {navItems.map((item) => (
                     <MenuItem key={item.id}>
-                      <button
-                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-[focus]:bg-gray-800 data-[focus]:text-white ${currentPage === item.page
-                          ? 'text-blue-500 font-semibold'
-                          : 'text-gray-100'
+                      <Link
+                        to={item.path}
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-[focus]:bg-gray-800 data-[focus]:text-white ${isCurrentPage(item.path)
+                            ? 'text-blue-500 font-semibold'
+                            : 'text-gray-100'
                           }`}
-                        onClick={() => handleNavigate(item.page)}
-                        aria-current={currentPage === item.page ? 'page' : undefined}
+                        aria-current={isCurrentPage(item.path) ? 'page' : undefined}
                       >
                         {item.label}
-                      </button>
+                      </Link>
                     </MenuItem>
                   ))}
                 </div>
