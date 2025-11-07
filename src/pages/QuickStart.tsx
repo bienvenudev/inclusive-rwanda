@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
 
 const QuickStart: React.FC = () => {
-  const [activeTab, setActiveTab] = useState('semantic');
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
 
   const toggleCheck = (item: string) => {
@@ -57,8 +57,8 @@ const QuickStart: React.FC = () => {
               <button
                 onClick={() => toggleCheck(item.id)}
                 className={`w-6 h-6 rounded border-2 mr-4 flex items-center justify-center transition-all duration-200 ${checkedItems.includes(item.id)
-                    ? 'bg-blue-500 border-blue-500 text-white'
-                    : 'border-gray-600 hover:border-blue-500'
+                  ? 'bg-blue-500 border-blue-500 text-white'
+                  : 'border-gray-600 hover:border-blue-500'
                   }`}
                 aria-label={`Toggle ${item.text}`}
               >
@@ -73,8 +73,8 @@ const QuickStart: React.FC = () => {
                   {item.text}
                 </span>
                 <span className={`ml-3 px-2 py-1 rounded-full text-xs font-medium ${item.impact === 'High' ? 'bg-red-500/20 text-red-400' :
-                    item.impact === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
-                      'bg-green-500/20 text-green-400'
+                  item.impact === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
+                    'bg-green-500/20 text-green-400'
                   }`}>
                   {item.impact} Impact
                 </span>
@@ -103,38 +103,32 @@ const QuickStart: React.FC = () => {
             Code Examples & Best Practices
           </h2>
 
-          {/* Tab Navigation */}
-          <div className="flex flex-wrap justify-center mb-8 bg-gray-800 rounded-lg p-1 max-w-4xl mx-auto">
-            {[
-              { id: 'semantic', label: 'Semantic HTML' },
-              { id: 'forms', label: 'Accessible Forms' },
-              { id: 'images', label: 'Images & Media' },
-              { id: 'navigation', label: 'Navigation' }
-            ].map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${activeTab === tab.id
-                    ? 'bg-blue-500 text-white'
-                    : 'text-gray-200 hover:text-gray-50'
-                  }`}
-              >
-                {tab.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Tab Content */}
           <div className="max-w-6xl mx-auto">
+            <TabGroup>
+              <TabList className="flex flex-wrap max-w-fit justify-center mb-8 bg-gray-800 rounded-lg p-1 mx-auto">
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Semantic HTML
+                </Tab>
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Accessible Forms
+                </Tab>
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Images & Media
+                </Tab>
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                  Navigation
+                </Tab>
+              </TabList>
 
-            {/* Semantic HTML Tab */}
-            {activeTab === 'semantic' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Poor Structure</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<div class="header">
+              <TabPanels>
+                {/* Semantic HTML Panel */}
+                <TabPanel>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Poor Structure</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<div class="header">
   <div class="logo">My Site</div>
   <div class="menu">
     <div>Home</div>
@@ -145,18 +139,18 @@ const QuickStart: React.FC = () => {
   <div class="title">Welcome</div>
   <div class="text">Content here...</div>
 </div>`}
-                    </pre>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-2">
-                    Screen readers can't understand the page structure
-                  </p>
-                </div>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-2">
+                        Screen readers can't understand the page structure
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Semantic Structure</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<header>
+                    <div>
+                      <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Semantic Structure</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<header>
   <h1>My Site</h1>
   <nav aria-label="Main navigation">
     <ul>
@@ -169,23 +163,23 @@ const QuickStart: React.FC = () => {
   <h1>Welcome</h1>
   <p>Content here...</p>
 </main>`}
-                    </pre>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-green-400 mt-2">
+                        Clear structure that assistive technologies understand
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-green-400 mt-2">
-                    Clear structure that assistive technologies understand
-                  </p>
-                </div>
-              </div>
-            )}
+                </TabPanel>
 
-            {/* Forms Tab */}
-            {activeTab === 'forms' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Inaccessible Form</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<form>
+                {/* Forms Panel */}
+                <TabPanel>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Inaccessible Form</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<form>
   <div>Name</div>
   <input type="text">
   
@@ -198,18 +192,18 @@ const QuickStart: React.FC = () => {
   
   <button>Submit</button>
 </form>`}
-                    </pre>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-2">
-                    No connection between labels and inputs
-                  </p>
-                </div>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-2">
+                        No connection between labels and inputs
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Accessible Form</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<form>
+                    <div>
+                      <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Accessible Form</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<form>
   <label for="name">Name *</label>
   <input 
     type="text" 
@@ -234,23 +228,23 @@ const QuickStart: React.FC = () => {
     Submit Form
   </button>
 </form>`}
-                    </pre>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-green-400 mt-2">
+                        Proper labels, error handling, and ARIA attributes
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-green-400 mt-2">
-                    Proper labels, error handling, and ARIA attributes
-                  </p>
-                </div>
-              </div>
-            )}
+                </TabPanel>
 
-            {/* Images Tab */}
-            {activeTab === 'images' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Poor Alt Text</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<!-- No alt text -->
+                {/* Images Panel */}
+                <TabPanel>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Poor Alt Text</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<!-- No alt text -->
 <img src="chart.png">
 
 <!-- Redundant alt text -->
@@ -260,18 +254,18 @@ const QuickStart: React.FC = () => {
 <!-- Unhelpful alt text -->
 <img src="graph.png" 
      alt="Graph">`}
-                    </pre>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-2">
-                    Screen readers can't convey meaningful information
-                  </p>
-                </div>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-2">
+                        Screen readers can't convey meaningful information
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Descriptive Alt Text</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<!-- Descriptive alt text -->
+                    <div>
+                      <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Descriptive Alt Text</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<!-- Descriptive alt text -->
 <img src="chart.png" 
      alt="Bar chart showing 60% 
      increase in mobile usage 
@@ -287,23 +281,23 @@ const QuickStart: React.FC = () => {
 <img src="decoration.png" 
      alt="" 
      role="presentation">`}
-                    </pre>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-green-400 mt-2">
+                        Meaningful descriptions that convey the image's purpose
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-green-400 mt-2">
-                    Meaningful descriptions that convey the image's purpose
-                  </p>
-                </div>
-              </div>
-            )}
+                </TabPanel>
 
-            {/* Navigation Tab */}
-            {activeTab === 'navigation' && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Poor Navigation</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<div class="nav">
+                {/* Navigation Panel */}
+                <TabPanel>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                      <h3 className="text-xl font-semibold text-red-400 mb-4">❌ Poor Navigation</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<div class="nav">
   <span onclick="navigate()">
     Home
   </span>
@@ -314,18 +308,18 @@ const QuickStart: React.FC = () => {
 
 <!-- No skip link -->
 <!-- No focus indicators -->`}
-                    </pre>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-2">
-                    Not keyboard accessible, no semantic meaning
-                  </p>
-                </div>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-gray-400 mt-2">
+                        Not keyboard accessible, no semantic meaning
+                      </p>
+                    </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Accessible Navigation</h3>
-                  <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                    <pre className="text-gray-200">
-                      {`<!-- Skip link for screen readers -->
+                    <div>
+                      <h3 className="text-xl font-semibold text-green-400 mb-4">✅ Accessible Navigation</h3>
+                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
+                        <pre className="text-gray-200">
+                          {`<!-- Skip link for screen readers -->
 <a href="#main" class="skip-link">
   Skip to main content
 </a>
@@ -347,15 +341,16 @@ const QuickStart: React.FC = () => {
 <main id="main">
   <!-- Page content -->
 </main>`}
-                    </pre>
+                        </pre>
+                      </div>
+                      <p className="text-xs text-green-400 mt-2">
+                        Keyboard accessible with proper ARIA labels
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs text-green-400 mt-2">
-                    Keyboard accessible with proper ARIA labels
-                  </p>
-                </div>
-              </div>
-            )}
-
+                </TabPanel>
+              </TabPanels>
+            </TabGroup>
           </div>
         </div>
       </section>
