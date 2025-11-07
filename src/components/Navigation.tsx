@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
+import { Bars3Icon } from '@heroicons/react/24/outline';
+import Button from './Button';
 
 interface NavigationProps {
   currentPage: string;
@@ -6,8 +9,6 @@ interface NavigationProps {
 }
 
 const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const navItems = [
     { id: 'home', label: 'Home', page: 'home' },
     { id: 'why-matters', label: 'Why It Matters', page: 'why-matters' },
@@ -15,20 +16,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
     { id: 'resources', label: 'Resources', page: 'resources' },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const handleNavigate = (page: string) => {
     onNavigate(page);
-    setIsMenuOpen(false);
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent, page: string) => {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      handleNavigate(page);
-    }
   };
 
   return (
@@ -37,53 +26,64 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
         Skip to main content
       </a>
 
-      <header className="header">
-        <div className="container">
-          <div className="nav-brand">
-            <button
-              onClick={() => handleNavigate('home')}
-              className="brand-button"
-              aria-label="Inclusive Rwanda - Go to home page"
-            >
-              <span className="brand-text">Inclusive Rwanda</span>
-            </button>
-          </div>
+      <header className="bg-secondary border-b border-gray-600 sticky top-0 z-50">
+        <div className="container ">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center">
+              <Button
+                onClick={() => handleNavigate('home')}
+                variant="ghost"
+                className="p-2 text-white text-xl font-bold"
+                aria-label="Inclusive Rwanda - Go to home page"
+              >
+                <span className="text-blue-500">Inclusive Rwanda</span>
+              </Button>
+            </div>
 
-          <nav className="nav" role="navigation" aria-label="Main navigation">
-            <button
-              className="menu-toggle"
-              onClick={toggleMenu}
-              aria-expanded={isMenuOpen}
-              aria-controls="main-menu"
-              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-            >
-              <span className="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-            </button>
-
-            <ul
-              id="main-menu"
-              className={`nav-menu ${isMenuOpen ? 'nav-menu--open' : ''}`}
-              role="menubar"
-            >
+            <nav className="hidden md:flex space-x-2" role="navigation" aria-label="Main navigation">
               {navItems.map((item) => (
-                <li key={item.id} role="none">
-                  <button
-                    className={`nav-link ${currentPage === item.page ? 'nav-link--active' : ''}`}
-                    onClick={() => handleNavigate(item.page)}
-                    onKeyDown={(e) => handleKeyDown(e, item.page)}
-                    role="menuitem"
-                    aria-current={currentPage === item.page ? 'page' : undefined}
-                  >
-                    {item.label}
-                  </button>
-                </li>
+                <Button
+                  key={item.id}
+                  variant={currentPage === item.page ? 'secondary' : 'ghost'}
+                  size="md"
+                  onClick={() => handleNavigate(item.page)}
+                  aria-current={currentPage === item.page ? 'page' : undefined}
+                  className={currentPage === item.page ? 'text-blue-500 font-semibold' : ''}
+                >
+                  {item.label}
+                </Button>
               ))}
-            </ul>
-          </nav>
+            </nav>
+
+            <Menu as="div" className="md:hidden relative">
+              <MenuButton className="inline-flex items-center justify-center p-2 rounded-md text-gray-100 hover:text-white hover:bg-tertiary focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-secondary transition-colors duration-200">
+                <span className="sr-only">Open menu</span>
+                <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+              </MenuButton>
+
+              <MenuItems
+                anchor="bottom end"
+                className="mt-2 w-48 bg-secondary border border-gray-600 rounded-md shadow-lg focus:outline-none z-50"
+              >
+                <div className="py-1">
+                  {navItems.map((item) => (
+                    <MenuItem key={item.id}>
+                      <button
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-[focus]:bg-tertiary data-[focus]:text-white ${currentPage === item.page
+                          ? 'text-blue-500 font-semibold'
+                          : 'text-gray-100'
+                          }`}
+                        onClick={() => handleNavigate(item.page)}
+                        aria-current={currentPage === item.page ? 'page' : undefined}
+                      >
+                        {item.label}
+                      </button>
+                    </MenuItem>
+                  ))}
+                </div>
+              </MenuItems>
+            </Menu>
+          </div>
         </div>
       </header>
     </>
