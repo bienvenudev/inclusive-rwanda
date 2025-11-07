@@ -9,7 +9,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
   return (
-    <div className="min-h-screen bg-[var(--bg-primary)]">
+    <div className="min-h-screen bg-gray-950">
       <Navigation currentPage={currentPage} onNavigate={setCurrentPage} />
       <div className="container">
         {currentPage === 'home' && <Home />}

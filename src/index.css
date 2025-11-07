@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0d1117;
-  --color-secondary: #161b22;
-  --color-tertiary: #21262d;
-  --color-white: #f0f6fc;
-  --color-gray-100: #c9d1d9;
+  /* Tailwind semantic colors */
+  --color-gray-950: #0d1117;
+  --color-gray-900: #161b22;
+  --color-gray-800: #21262d;
+  --color-gray-50: #f0f6fc;
+  --color-gray-200: #c9d1d9;
   --color-gray-400: #8b949e;
+  --color-gray-600: #30363d;
+
   --color-blue-500: #58a6ff;
   --color-blue-600: #1f6feb;
-  --color-blue-900: #0d1421;
   --color-blue-400: #4493e6;
   --color-blue-300: #388bfd;
-  --color-gray-600: #30363d;
   --color-blue-700: #1f6feb;
+  --color-blue-900: #0d1421;
+
   --color-green-500: #3fb950;
   --color-yellow-500: #d29922;
   --color-red-500: #f85149;
@@ -40,8 +43,8 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-gray-950);
+  color: var(--color-gray-50);
   font-family: var(--font-family-sans);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -52,8 +55,8 @@ body {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: var(--color-secondary);
-  color: var(--color-white);
+  background: var(--color-gray-900);
+  color: var(--color-gray-50);
   padding: 8px;
   text-decoration: none;
   border-radius: 4px;

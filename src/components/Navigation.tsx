@@ -26,7 +26,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
         Skip to main content
       </a>
 
-      <header className="bg-secondary border-b border-gray-600 sticky top-0 z-50">
+      <header className="bg-gray-900 border-b border-gray-600 sticky top-0 z-50">
         <div className="container ">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
@@ -56,20 +56,20 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage, onNavigate }) => {
             </nav>
 
             <Menu as="div" className="md:hidden relative">
-              <MenuButton className="inline-flex items-center justify-center p-2 rounded-md text-gray-100 hover:text-white hover:bg-tertiary focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-secondary transition-colors duration-200">
+              <MenuButton className="inline-flex items-center justify-center p-2 rounded-md text-gray-100 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900 transition-colors duration-200">
                 <span className="sr-only">Open menu</span>
                 <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
               </MenuButton>
 
               <MenuItems
                 anchor="bottom end"
-                className="mt-2 w-48 bg-secondary border border-gray-600 rounded-md shadow-lg focus:outline-none z-50"
+                className="mt-2 w-48 bg-gray-900 border border-gray-600 rounded-md shadow-lg focus:outline-none z-50"
               >
                 <div className="py-1">
                   {navItems.map((item) => (
                     <MenuItem key={item.id}>
                       <button
-                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-[focus]:bg-tertiary data-[focus]:text-white ${currentPage === item.page
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-[focus]:bg-gray-800 data-[focus]:text-white ${currentPage === item.page
                           ? 'text-blue-500 font-semibold'
                           : 'text-gray-100'
                           }`}

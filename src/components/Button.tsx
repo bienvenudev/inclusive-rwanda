@@ -23,12 +23,12 @@ const Button: React.FC<ButtonProps> = ({
   'aria-label': ariaLabel,
   'aria-current': ariaCurrent,
 }) => {
-  const baseClasses = 'font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--accent-focus)] focus:ring-offset-2 focus:ring-offset-[var(--bg-secondary)] cursor-pointer border-0 font-family-inherit';
+  const baseClasses = 'font-medium rounded-md transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900 cursor-pointer border-0 font-family-inherit';
 
   const variantClasses = {
-    primary: 'bg-[var(--accent-secondary)] text-white hover:bg-[var(--accent-hover)]',
-    secondary: 'bg-[var(--bg-tertiary)] text-[var(--text-primary)] hover:bg-[var(--bg-secondary)] border border-[var(--border-default)]',
-    ghost: 'bg-transparent text-[var(--text-secondary)] hover:text-[var(--text-primary)] hover:bg-[var(--bg-tertiary)]'
+    primary: 'bg-blue-600 text-white hover:bg-blue-400',
+    secondary: 'bg-gray-800 text-gray-50 hover:bg-gray-900 border border-gray-600',
+    ghost: 'bg-transparent text-gray-200 hover:text-gray-50 hover:bg-gray-800'
   };
 
   const sizeClasses = {
