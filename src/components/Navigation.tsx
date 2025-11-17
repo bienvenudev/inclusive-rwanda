@@ -15,9 +15,22 @@ const Navigation: React.FC = () => {
 
   const isCurrentPage = (path: string) => location.pathname === path;
 
+  const handleLogoClick = () => {
+    window.scrollTo(0, 0);
+  };
+
+  const handleNavClick = (path: string) => {
+    if (location.pathname === path) {
+      window.scrollTo(0, 0);
+    }
+  };
+
   return (
     <>
-      <a href="#main-content" className="skip-link">
+      <a
+        href="#main-content"
+        className="skip-link fixed top-2 left-2 bg-blue-500 text-white px-4 py-2 rounded-md text-sm font-medium z-50 transform -translate-y-full opacity-0 focus:translate-y-0 focus:opacity-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300"
+      >
         Skip to main content
       </a>
 
@@ -25,7 +38,11 @@ const Navigation: React.FC = () => {
         <div className="container ">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center">
-              <Link to="/" className="p-2 text-white text-xl font-bold hover:opacity-80 transition-opacity duration-200">
+              <Link
+                to="/"
+                onClick={handleLogoClick}
+                className="p-2 text-white text-xl font-bold hover:opacity-80 transition-opacity duration-200"
+              >
                 <span className="text-blue-500">Inclusive Rwanda</span>
               </Link>
             </div>
@@ -35,9 +52,10 @@ const Navigation: React.FC = () => {
                 <Link
                   key={item.id}
                   to={item.path}
+                  onClick={() => handleNavClick(item.path)}
                   className={`px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900 ${isCurrentPage(item.path)
-                      ? 'bg-gray-800 text-blue-500 font-semibold border border-gray-600'
-                      : 'text-gray-200 hover:text-gray-50 hover:bg-gray-800'
+                    ? 'bg-gray-800 text-blue-500 font-semibold border border-gray-600'
+                    : 'text-gray-200 hover:text-gray-50 hover:bg-gray-800'
                     }`}
                   aria-current={isCurrentPage(item.path) ? 'page' : undefined}
                 >
@@ -61,9 +79,10 @@ const Navigation: React.FC = () => {
                     <MenuItem key={item.id}>
                       <Link
                         to={item.path}
+                        onClick={() => handleNavClick(item.path)}
                         className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-focus:bg-gray-800 data-focus:text-white ${isCurrentPage(item.path)
-                            ? 'text-blue-500 font-semibold'
-                            : 'text-gray-100'
+                          ? 'text-blue-500 font-semibold'
+                          : 'text-gray-100'
                           }`}
                         aria-current={isCurrentPage(item.path) ? 'page' : undefined}
                       >
