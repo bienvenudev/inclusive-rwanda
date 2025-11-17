@@ -56,9 +56,9 @@ const WhyItMatters: React.FC = () => {
             className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
           >
             <div className="text-4xl font-bold text-blue-500 mb-2">1.3B</div>
-            <h3 className="text-lg font-semibold text-gray-50 mb-2">People Worldwide</h3>
-            <p className="text-gray-200 text-sm leading-relaxed mb-3">have a disability that affects their web experience</p>
-            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+            <h3 className="text-xl font-semibold text-gray-50 mb-3">People Worldwide</h3>
+            <p className="text-gray-200 text-base leading-relaxed mb-3">have a disability that affects their web experience</p>
+            <div className="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center">
               Source: WHO
               <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -72,9 +72,9 @@ const WhyItMatters: React.FC = () => {
             className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
           >
             <div className="text-4xl font-bold text-blue-500 mb-2">15%</div>
-            <h3 className="text-lg font-semibold text-gray-50 mb-2">Of Rwanda's Population</h3>
-            <p className="text-gray-200 text-sm leading-relaxed mb-3">live with some form of disability</p>
-            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+            <h3 className="text-xl font-semibold text-gray-50 mb-3">Of Rwanda's Population</h3>
+            <p className="text-gray-200 text-base leading-relaxed mb-3">live with some form of disability</p>
+            <div className="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center">
               Source: Rwanda Census 2012
               <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -88,9 +88,9 @@ const WhyItMatters: React.FC = () => {
             className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
           >
             <div className="text-4xl font-bold text-blue-500 mb-2">94.8%</div>
-            <h3 className="text-lg font-semibold text-gray-50 mb-2">Of Websites</h3>
-            <p className="text-gray-200 text-sm leading-relaxed mb-3">have accessibility barriers that exclude users</p>
-            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+            <h3 className="text-xl font-semibold text-gray-50 mb-3">Of Websites</h3>
+            <p className="text-gray-200 text-base leading-relaxed mb-3">have accessibility barriers that exclude users</p>
+            <div className="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center">
               Source: WebAIM Million Report
               <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -104,9 +104,9 @@ const WhyItMatters: React.FC = () => {
             className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
           >
             <div className="text-4xl font-bold text-blue-500 mb-2">$13T</div>
-            <h3 className="text-lg font-semibold text-gray-50 mb-2">Global Market</h3>
-            <p className="text-gray-200 text-sm leading-relaxed mb-3">spending power of people with disabilities worldwide</p>
-            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+            <h3 className="text-xl font-semibold text-gray-50 mb-3">Global Market</h3>
+            <p className="text-gray-200 text-base leading-relaxed mb-3">spending power of people with disabilities worldwide</p>
+            <div className="text-sm text-blue-400 hover:text-blue-300 font-medium flex items-center">
               Source: Accenture Research
               <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -131,13 +131,13 @@ const WhyItMatters: React.FC = () => {
                   A
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-50 mb-2">Amara, Visual Impairment</h3>
-                  <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                  <h3 className="text-xl font-semibold text-gray-50 mb-3">Amara, Visual Impairment</h3>
+                  <p className="text-gray-200 text-base leading-relaxed mb-4">
                     "I use a screen reader to navigate websites. When developers add proper alt text and heading structure,
                     I can access information just as quickly as anyone else. But when they don't, simple tasks like
                     online banking or shopping become impossible."
                   </p>
-                  <div className="text-xs text-blue-500 font-medium">
+                  <div className="text-sm text-blue-500 font-medium">
                     💡 Impact: Proper semantic HTML unlocks independence
                   </div>
                 </div>
@@ -151,12 +151,12 @@ const WhyItMatters: React.FC = () => {
                   J
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-50 mb-2">Jean-Claude, Motor Disability</h3>
-                  <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                  <h3 className="text-xl font-semibold text-gray-50 mb-3">Jean-Claude, Motor Disability</h3>
+                  <p className="text-gray-200 text-base leading-relaxed mb-4">
                     "I can only use a keyboard to navigate. Websites with good keyboard support let me apply for jobs,
                     learn new skills, and stay connected with my community. It's about dignity and opportunity."
                   </p>
-                  <div className="text-xs text-blue-500 font-medium">
+                  <div className="text-sm text-blue-500 font-medium">
                     💡 Impact: Keyboard navigation enables participation
                   </div>
                 </div>
@@ -170,12 +170,12 @@ const WhyItMatters: React.FC = () => {
                   M
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-50 mb-2">Marie, Hearing Impairment</h3>
-                  <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                  <h3 className="text-xl font-semibold text-gray-50 mb-3">Marie, Hearing Impairment</h3>
+                  <p className="text-gray-200 text-base leading-relaxed mb-4">
                     "Captions on videos aren't just nice to have - they're essential for my education and career.
                     When educational content lacks captions, I miss out on learning opportunities."
                   </p>
-                  <div className="text-xs text-blue-500 font-medium">
+                  <div className="text-sm text-blue-500 font-medium">
                     💡 Impact: Captions create equal access to information
                   </div>
                 </div>
@@ -189,12 +189,12 @@ const WhyItMatters: React.FC = () => {
                   E
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-gray-50 mb-2">Emmanuel, Cognitive Disability</h3>
-                  <p className="text-gray-200 text-sm leading-relaxed mb-3">
+                  <h3 className="text-xl font-semibold text-gray-50 mb-3">Emmanuel, Cognitive Disability</h3>
+                  <p className="text-gray-200 text-base leading-relaxed mb-4">
                     "Clear, simple language and consistent navigation help me understand and use websites.
                     Complex layouts and jargon make it frustrating to access services I need."
                   </p>
-                  <div className="text-xs text-blue-500 font-medium">
+                  <div className="text-sm text-blue-500 font-medium">
                     💡 Impact: Clear design benefits everyone's comprehension
                   </div>
                 </div>
@@ -246,7 +246,7 @@ const WhyItMatters: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Expanded Market Reach</h3>
+            <h3 className="text-2xl font-semibold text-gray-50 mb-4">Expanded Market Reach</h3>
             <p className="text-gray-200 leading-relaxed">
               Accessible websites reach 15% more customers. In Rwanda's growing digital economy,
               that's thousands of potential users you can't afford to exclude.
@@ -259,7 +259,7 @@ const WhyItMatters: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Legal Protection</h3>
+            <h3 className="text-2xl font-semibold text-gray-50 mb-4">Legal Protection</h3>
             <p className="text-gray-200 leading-relaxed">
               Rwanda's Law on Rights and Protection of Persons with Disabilities requires equal access.
               Accessible websites help ensure compliance and avoid legal risks.
@@ -272,7 +272,7 @@ const WhyItMatters: React.FC = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Better Performance</h3>
+            <h3 className="text-2xl font-semibold text-gray-50 mb-4">Better Performance</h3>
             <p className="text-gray-200 leading-relaxed">
               Accessible websites are often faster, more SEO-friendly, and provide better user experience
               for everyone, including mobile users with slow connections.
@@ -294,12 +294,12 @@ const WhyItMatters: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-gray-800 border border-gray-600 p-6 rounded-lg text-left">
-              <h3 className="text-lg font-semibold text-blue-500 mb-3">🇷🇼 Vision 2050 Alignment</h3>
-              <p className="text-gray-200 text-sm leading-relaxed mb-3">
+              <h3 className="text-xl font-semibold text-blue-500 mb-4">🇷🇼 Vision 2050 Alignment</h3>
+              <p className="text-gray-200 text-base leading-relaxed mb-4">
                 Rwanda's Vision 2050 emphasizes leaving no one behind in development. Accessible digital services
                 ensure people with disabilities participate fully in the knowledge economy.
               </p>
-              <ul className="text-xs text-gray-400 space-y-1">
+              <ul className="text-sm text-gray-400 space-y-1">
                 <li>• Digital government services for all citizens</li>
                 <li>• Inclusive education through technology</li>
                 <li>• Equal economic opportunities</li>
@@ -307,12 +307,12 @@ const WhyItMatters: React.FC = () => {
             </div>
 
             <div className="bg-gray-800 border border-gray-600 p-6 rounded-lg text-left">
-              <h3 className="text-lg font-semibold text-blue-500 mb-3">🌍 Global Competitiveness</h3>
-              <p className="text-gray-200 text-sm leading-relaxed mb-3">
+              <h3 className="text-xl font-semibold text-blue-500 mb-4">🌍 Global Competitiveness</h3>
+              <p className="text-gray-200 text-base leading-relaxed mb-4">
                 International companies increasingly require accessibility compliance. Rwandan tech companies
                 with accessibility expertise will have competitive advantages in global markets.
               </p>
-              <ul className="text-xs text-gray-400 space-y-1">
+              <ul className="text-sm text-gray-400 space-y-1">
                 <li>• Access to international contracts</li>
                 <li>• Higher-value service offerings</li>
                 <li>• Reputation as inclusive innovators</li>
