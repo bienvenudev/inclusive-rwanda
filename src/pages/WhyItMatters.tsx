@@ -5,8 +5,8 @@ const WhyItMatters: React.FC = () => {
   return (
     <main id="main-content" className="min-h-[calc(100vh-80px)] py-8">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-gradient-to-br from-gray-900 to-gray-800 mx-[-1rem] mb-16 rounded-none md:rounded-xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+      <section className="text-center py-16 bg-linear-to-br from-gray-900 to-gray-800 mx-4 mb-16 rounded-none md:rounded-xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-linear-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
           Why Accessibility Matters
         </h1>
         <p className="text-lg md:text-2xl text-gray-50 mb-4 font-medium">
@@ -17,37 +17,107 @@ const WhyItMatters: React.FC = () => {
         </p>
       </section>
 
+      {/* WHO Video Introduction */}
+      <section className="py-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
+          Understanding Disability and Accessibility
+        </h2>
+        <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed px-4">
+          The World Health Organization explains the global perspective on disability and why digital inclusion matters for everyone.
+        </p>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="relative aspect-video max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/BEFgnYktC7U"
+              title="WHO: Disability and Health - World Health Organization"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              aria-describedby="who-video-description"
+            ></iframe>
+          </div>
+          <p id="who-video-description" className="text-sm text-gray-400 mt-4 italic">
+            World Health Organization's overview of disability as a global health and human rights issue.
+          </p>
+        </div>
+      </section>
+
       {/* Global Impact Statistics */}
       <section className="py-16 text-center">
         <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-gray-50">
           The Numbers Don't Lie
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <div className="bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15">
+          <a
+            href="https://www.who.int/news-room/fact-sheets/detail/disability-and-health"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+          >
             <div className="text-4xl font-bold text-blue-500 mb-2">1.3B</div>
             <h3 className="text-lg font-semibold text-gray-50 mb-2">People Worldwide</h3>
-            <p className="text-gray-200 text-sm leading-relaxed">have a disability that affects their web experience</p>
-          </div>
-          <div className="bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15">
+            <p className="text-gray-200 text-sm leading-relaxed mb-3">have a disability that affects their web experience</p>
+            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+              Source: WHO
+              <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.statistics.gov.rw/publication/disability-rwanda-census-2012"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+          >
             <div className="text-4xl font-bold text-blue-500 mb-2">15%</div>
             <h3 className="text-lg font-semibold text-gray-50 mb-2">Of Rwanda's Population</h3>
-            <p className="text-gray-200 text-sm leading-relaxed">live with some form of disability (Rwanda National Census)</p>
-          </div>
-          <div className="bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15">
-            <div className="text-4xl font-bold text-blue-500 mb-2">98%</div>
+            <p className="text-gray-200 text-sm leading-relaxed mb-3">live with some form of disability</p>
+            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+              Source: Rwanda Census 2012
+              <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://webaim.org/projects/million/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+          >
+            <div className="text-4xl font-bold text-blue-500 mb-2">94.8%</div>
             <h3 className="text-lg font-semibold text-gray-50 mb-2">Of Websites</h3>
-            <p className="text-gray-200 text-sm leading-relaxed">have accessibility barriers that exclude users</p>
-          </div>
-          <div className="bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15">
+            <p className="text-gray-200 text-sm leading-relaxed mb-3">have accessibility barriers that exclude users</p>
+            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+              Source: WebAIM Million Report
+              <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </a>
+          <a
+            href="https://www.accenture.com/us-en/insights/consulting/disability-inclusion-research"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block bg-gray-900 border border-gray-600 p-8 rounded-xl transition-all duration-300 hover:border-blue-500 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/15 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+          >
             <div className="text-4xl font-bold text-blue-500 mb-2">$13T</div>
             <h3 className="text-lg font-semibold text-gray-50 mb-2">Global Market</h3>
-            <p className="text-gray-200 text-sm leading-relaxed">spending power of people with disabilities worldwide</p>
-          </div>
+            <p className="text-gray-200 text-sm leading-relaxed mb-3">spending power of people with disabilities worldwide</p>
+            <div className="text-xs text-blue-400 hover:text-blue-300 font-medium flex items-center">
+              Source: Accenture Research
+              <svg className="w-3 h-3 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </a>
         </div>
       </section>
 
       {/* Human Stories */}
-      <section className="py-16 bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center text-gray-50">
             Real People, Real Impact
@@ -135,10 +205,38 @@ const WhyItMatters: React.FC = () => {
         </div>
       </section>
 
+      {/* WebAIM Accessibility Video */}
+      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
+        <div className="px-4">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
+            The Business Case for Accessibility
+          </h2>
+          <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+            Learn why accessibility isn't just the right thing to do—it's the smart business decision that drives innovation and growth.
+          </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="relative aspect-video max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/eFkhFxJZvho"
+                title="The Business Case for Digital Accessibility"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                aria-describedby="business-video-description"
+              ></iframe>
+            </div>
+            <p id="business-video-description" className="text-sm text-gray-400 mt-4 italic">
+              Expert insights on how accessibility drives business value, innovation, and competitive advantage.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Business Benefits */}
       <section className="py-16">
         <h2 className="text-3xl md:text-4xl font-semibold mb-12 text-center text-gray-50">
-          It's Good Business Too
+          The ROI of Accessibility
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
 
@@ -185,7 +283,7 @@ const WhyItMatters: React.FC = () => {
       </section>
 
       {/* Rwanda Context */}
-      <section className="py-16 bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
             Rwanda's Digital Inclusion Vision

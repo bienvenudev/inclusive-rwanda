@@ -61,7 +61,7 @@ const Navigation: React.FC = () => {
                     <MenuItem key={item.id}>
                       <Link
                         to={item.path}
-                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-[focus]:bg-gray-800 data-[focus]:text-white ${isCurrentPage(item.path)
+                        className={`block w-full text-left px-4 py-2 text-sm transition-colors duration-200 data-focus:bg-gray-800 data-focus:text-white ${isCurrentPage(item.path)
                             ? 'text-blue-500 font-semibold'
                             : 'text-gray-100'
                           }`}

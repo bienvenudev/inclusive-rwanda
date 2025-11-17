@@ -5,8 +5,8 @@ const Home: React.FC = () => {
   return (
     <main id="main-content" className="min-h-[calc(100vh-80px)] py-8">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-gradient-to-br from-gray-900 to-gray-800 mx-[-1rem] mb-16 rounded-none md:rounded-xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+      <section className="text-center py-16 bg-linear-to-br from-gray-900 to-gray-800 mx-4 mb-16 rounded-none md:rounded-xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-linear-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
           Inclusive Rwanda
         </h1>
         <p className="text-lg md:text-2xl text-white mb-4 font-medium">
@@ -46,7 +46,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* What is Web Accessibility Section */}
-      <section className="py-16 text-center bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-white">
             What is Web Accessibility?
@@ -119,7 +119,7 @@ const Home: React.FC = () => {
       </section>
 
       {/* Interactive Demo Section */}
-      <section className="py-16 text-center bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
             See Accessibility in Action

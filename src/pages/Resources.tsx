@@ -7,8 +7,8 @@ const Resources: React.FC = () => {
   return (
     <main id="main-content" className="min-h-[calc(100vh-80px)] py-8">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-gradient-to-br from-gray-900 to-gray-800 mx-[-1rem] mb-16 rounded-none md:rounded-xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+      <section className="text-center py-16 bg-linear-to-br from-gray-900 to-gray-800 mx-4 mb-16 rounded-none md:rounded-xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-linear-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
           Resources & Community
         </h1>
         <p className="text-lg md:text-2xl text-gray-50 mb-4 font-medium">
@@ -32,14 +32,14 @@ const Resources: React.FC = () => {
               key={category.id}
               onClick={() => setActiveCategory(category.id)}
               className={`px-4 py-3 rounded-md text-sm font-medium transition-all duration-200 flex items-center gap-2 ${activeCategory === category.id
-                  ? 'bg-blue-500 text-white shadow-lg'
-                  : 'text-gray-200 hover:text-gray-50 hover:bg-gray-800'
+                ? 'bg-blue-500 text-white shadow-lg'
+                : 'text-gray-200 hover:text-gray-50 hover:bg-gray-800'
                 }`}
             >
               <span>{category.label}</span>
               <span className={`text-xs px-2 py-1 rounded-full ${activeCategory === category.id
-                  ? 'bg-white/20'
-                  : 'bg-blue-500/20 text-blue-500'
+                ? 'bg-white/20'
+                : 'bg-blue-500/20 text-blue-500'
                 }`}>
                 {category.count}
               </span>
@@ -63,7 +63,12 @@ const Resources: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://wave.webaim.org/extension/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">W</span>
@@ -76,13 +81,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Visual accessibility evaluation tool that shows errors and warnings directly on your webpage.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">Browser Extension</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Install Extension
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://www.deque.com/axe/devtools/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">A</span>
@@ -95,13 +111,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Industry-standard accessibility testing integrated into browser developer tools.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">DevTools</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Get axe DevTools
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://developers.google.com/web/tools/lighthouse/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">L</span>
@@ -114,13 +141,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Built into Chrome DevTools, provides accessibility audits along with performance metrics.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded">Built-in</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Learn More
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://www.tpgi.com/color-contrast-checker/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">C</span>
@@ -133,13 +171,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Desktop app for checking color contrast ratios and simulating color blindness.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">Desktop App</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Download App
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://www.getstark.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">S</span>
@@ -152,13 +201,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Design plugin for Figma, Sketch, and Adobe XD to check accessibility during design phase.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">Freemium</span>
                   <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Design Tools</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Get Stark
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://github.com/appt-org/taba11y"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">T</span>
@@ -171,11 +231,17 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Browser extension that visualizes the tab order and keyboard navigation flow of web pages.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">Browser Extension</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Get Extension
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
             </div>
           </div>
@@ -188,7 +254,12 @@ const Resources: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">VS</span>
@@ -201,13 +272,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Real-time accessibility linting in your code editor as you write HTML and JSX.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">VS Code</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Install Extension
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://www.npmjs.com/package/eslint-plugin-jsx-a11y"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">E</span>
@@ -220,13 +302,24 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   ESLint plugin that catches accessibility issues in React JSX elements during development.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">React</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  View on NPM
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 transition-colors duration-200">
+              <a
+                href="https://pa11y.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <div className="flex items-center mb-3">
                   <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
                     <span className="text-white font-bold">P</span>
@@ -239,11 +332,17 @@ const Resources: React.FC = () => {
                 <p className="text-sm text-gray-200 mb-3">
                   Command-line accessibility testing tool that can be integrated into CI/CD pipelines.
                 </p>
-                <div className="flex gap-2">
+                <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-xs rounded">CLI</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Visit Pa11y
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
             </div>
           </div>
@@ -266,7 +365,12 @@ const Resources: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.w3.org/WAI/WCAG21/quickref/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">Web Content Accessibility Guidelines (WCAG) 2.1</h4>
                 <p className="text-sm text-gray-200 mb-4">
                   The international standard for web accessibility. Comprehensive guidelines with success criteria and techniques.
@@ -276,10 +380,20 @@ const Resources: React.FC = () => {
                   <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">Level AA</span>
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Level AAA</span>
                 </div>
-                <p className="text-xs text-gray-400">w3.org/WAI/WCAG21/quickref/</p>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  View WCAG Guidelines
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://developer.mozilla.org/en-US/docs/Web/Accessibility"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">MDN Web Accessibility</h4>
                 <p className="text-sm text-gray-200 mb-4">
                   Practical accessibility documentation with code examples and best practices for web developers.
@@ -288,10 +402,20 @@ const Resources: React.FC = () => {
                   <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">Beginner Friendly</span>
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Code Examples</span>
                 </div>
-                <p className="text-xs text-gray-400">developer.mozilla.org/en-US/docs/Web/Accessibility</p>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Visit MDN Accessibility Docs
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://webaim.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">WebAIM Resources</h4>
                 <p className="text-sm text-gray-200 mb-4">
                   Practical tutorials, articles, and tools for implementing web accessibility from Utah State University.
@@ -300,10 +424,20 @@ const Resources: React.FC = () => {
                   <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">Screen Readers</span>
                   <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Testing</span>
                 </div>
-                <p className="text-xs text-gray-400">webaim.org</p>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Explore WebAIM
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.a11yproject.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">A11y Project</h4>
                 <p className="text-sm text-gray-200 mb-4">
                   Community-driven effort to make digital accessibility easier with patterns and resources.
@@ -312,8 +446,13 @@ const Resources: React.FC = () => {
                   <span className="px-2 py-1 bg-teal-500/20 text-teal-400 text-xs rounded">Community</span>
                   <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-xs rounded">Patterns</span>
                 </div>
-                <p className="text-xs text-gray-400">a11yproject.com</p>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Visit A11y Project
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
             </div>
           </div>
@@ -326,32 +465,65 @@ const Resources: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.udacity.com/course/web-accessibility--ud891"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">Web Accessibility by Google</h4>
                 <p className="text-sm text-gray-200 mb-3">Udacity course covering fundamentals of accessible web development.</p>
                 <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">4 weeks</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Start Course
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.futurelearn.com/courses/digital-accessibility"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">Digital Accessibility</h4>
                 <p className="text-sm text-gray-200 mb-3">University of Southampton course on Futurelearn covering WCAG principles.</p>
                 <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
                   <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded">Certificate</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Join Course
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://dequeuniversity.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">Deque University</h4>
                 <p className="text-sm text-gray-200 mb-3">Comprehensive accessibility training with certification programs for developers.</p>
                 <div className="flex gap-2 mb-3">
                   <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-xs rounded">Paid</span>
                   <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Professional</span>
                 </div>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Explore Training
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
             </div>
           </div>
@@ -401,31 +573,51 @@ const Resources: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.minict.gov.rw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">Ministry of ICT and Innovation (MINICT)</h4>
                 <p className="text-sm text-gray-200 mb-4">
                   Leading Rwanda's digital transformation with inclusive technology policies and accessibility standards.
                 </p>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm mb-3">
                   <p className="text-gray-200">• Digital Rwanda 2024 Strategy</p>
                   <p className="text-gray-200">• ICT Accessibility Guidelines</p>
                   <p className="text-gray-200">• Smart Rwanda Master Plan</p>
                 </div>
-                <p className="text-xs text-gray-400 mt-3">minict.gov.rw</p>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Visit MINICT
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.rura.rw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">Rwanda Utilities Regulatory Authority (RURA)</h4>
                 <p className="text-sm text-gray-200 mb-4">
                   Regulating telecommunications and ICT services with focus on universal access and inclusion.
                 </p>
-                <div className="space-y-2 text-sm">
+                <div className="space-y-2 text-sm mb-3">
                   <p className="text-gray-200">• ICT Accessibility Standards</p>
                   <p className="text-gray-200">• Digital Inclusion Policies</p>
                   <p className="text-gray-200">• Universal Access Fund</p>
                 </div>
-                <p className="text-xs text-gray-400 mt-3">rura.rw</p>
-              </div>
+                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                  Visit RURA
+                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </div>
+              </a>
 
             </div>
           </div>
@@ -508,21 +700,47 @@ const Resources: React.FC = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.alueducation.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">African Leadership University (ALU)</h4>
                 <p className="text-sm text-gray-200 mb-3">
                   Computing and software engineering programs emphasizing inclusive technology and social impact.
                 </p>
-                <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Higher Education</span>
-              </div>
+                <div className="flex items-center justify-between">
+                  <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-xs rounded">Higher Education</span>
+                  <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                    Visit ALU
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
+              <a
+                href="https://www.ur.ac.rw/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
+              >
                 <h4 className="font-semibold text-gray-50 mb-2">University of Rwanda - College of Science and Technology</h4>
                 <p className="text-sm text-gray-200 mb-3">
                   ICT programs incorporating accessibility and universal design principles in curriculum.
                 </p>
-                <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Public University</span>
-              </div>
+                <div className="flex items-center justify-between">
+                  <span className="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded">Public University</span>
+                  <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
+                    Visit UR
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
 
             </div>
           </div>
@@ -606,19 +824,19 @@ const Resources: React.FC = () => {
                   <h4 className="font-semibold text-gray-50 mb-4">🎨 Design Phase</h4>
                   <ul className="space-y-2 text-sm text-gray-200">
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Design with sufficient color contrast
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Don't rely solely on color to convey information
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Design clear focus indicators
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Ensure interactive elements are large enough
                     </li>
                   </ul>
@@ -628,19 +846,19 @@ const Resources: React.FC = () => {
                   <h4 className="font-semibold text-gray-50 mb-4">💻 Development Phase</h4>
                   <ul className="space-y-2 text-sm text-gray-200">
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Use semantic HTML elements
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Add proper ARIA labels and roles
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Implement keyboard navigation
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Provide meaningful alt text for images
                     </li>
                   </ul>
@@ -650,19 +868,19 @@ const Resources: React.FC = () => {
                   <h4 className="font-semibold text-gray-50 mb-4">🧪 Testing Phase</h4>
                   <ul className="space-y-2 text-sm text-gray-200">
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Test with keyboard navigation only
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Test with screen reader software
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Run automated accessibility audits
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Test with users who have disabilities
                     </li>
                   </ul>
@@ -672,19 +890,19 @@ const Resources: React.FC = () => {
                   <h4 className="font-semibold text-gray-50 mb-4">🚀 Launch & Maintenance</h4>
                   <ul className="space-y-2 text-sm text-gray-200">
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Provide accessibility statement
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Monitor for accessibility issues
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Gather user feedback
                     </li>
                     <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 flex-shrink-0"></span>
+                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
                       Regular accessibility audits
                     </li>
                   </ul>
@@ -698,7 +916,7 @@ const Resources: React.FC = () => {
       )}
 
       {/* Call to Action */}
-      <section className="py-16 text-center bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-50">
             Ready to Build Inclusive Rwanda?

@@ -16,8 +16,8 @@ const QuickStart: React.FC = () => {
   return (
     <main id="main-content" className="min-h-[calc(100vh-80px)] py-8">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-gradient-to-br from-gray-900 to-gray-800 mx-[-1rem] mb-16 rounded-none md:rounded-xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
+      <section className="text-center py-16 bg-linear-to-br from-gray-900 to-gray-800 mx-4 mb-16 rounded-none md:rounded-xl">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-linear-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
           Quick Start Guide
         </h1>
         <p className="text-lg md:text-2xl text-gray-50 mb-4 font-medium">
@@ -96,8 +96,34 @@ const QuickStart: React.FC = () => {
         </div>
       </section>
 
+      {/* Accessibility Tips Video */}
+      <section className="py-16 text-center">
+        <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
+          Essential Implementation Tips
+        </h2>
+        <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed px-4">
+          Now that you know what to implement, watch these practical tips to learn <em>how</em> to do it effectively.
+        </p>
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="relative aspect-video max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/qr0ujkLLgmE"
+              title="Web Accessibility: 7 Easy Tips for Developers"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              aria-describedby="tips-video-description"
+            ></iframe>
+          </div>
+          <p id="tips-video-description" className="text-sm text-gray-400 mt-4 italic">
+            Seven practical accessibility tips that developers can implement quickly to improve user experience.
+          </p>
+        </div>
+      </section>
+
       {/* Code Examples Tabs */}
-      <section className="py-16 bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-gray-50">
             Code Examples & Best Practices
@@ -106,16 +132,16 @@ const QuickStart: React.FC = () => {
           <div className="max-w-6xl mx-auto">
             <TabGroup>
               <TabList className="flex flex-wrap max-w-fit justify-center mb-8 bg-gray-800 rounded-lg p-1 mx-auto">
-                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
                   Semantic HTML
                 </Tab>
-                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
                   Accessible Forms
                 </Tab>
-                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
                   Images & Media
                 </Tab>
-                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-[selected]:bg-blue-500 data-[selected]:text-white data-[hover]:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
+                <Tab className="px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
                   Navigation
                 </Tab>
               </TabList>
@@ -355,13 +381,41 @@ const QuickStart: React.FC = () => {
         </div>
       </section>
 
+      {/* Accessibility Testing Video */}
+      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
+        <div className="px-4">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
+            Validate Your Implementation
+          </h2>
+          <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
+            You've learned what to implement and seen the code examples. Now learn how to test and validate that your accessibility features work correctly.
+          </p>
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="relative aspect-video max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
+              <iframe
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/cOmehxAU_4s"
+                title="How to Test a Website for Accessibility"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                aria-describedby="testing-video-description"
+              ></iframe>
+            </div>
+            <p id="testing-video-description" className="text-sm text-gray-400 mt-4 italic">
+              Comprehensive guide to testing websites for accessibility using various tools and techniques.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Testing Tools */}
       <section className="py-16">
         <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-gray-50">
-          Testing Your Work
+          Essential Testing Tools
         </h2>
         <p className="text-center text-gray-200 mb-12 max-w-2xl mx-auto">
-          Use these tools to validate your accessibility improvements
+          Here are the specific tools and techniques mentioned in the video to help you validate your accessibility improvements
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -462,7 +516,7 @@ const QuickStart: React.FC = () => {
       </section>
 
       {/* Next Steps */}
-      <section className="py-16 text-center bg-gray-900 mx-[-1rem] my-16 rounded-none md:rounded-xl">
+      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
         <div className="px-4">
           <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-50">
             You're Making a Difference!
