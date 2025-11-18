@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/quick-start"
-                className="group px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-ring"
+                className="group px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl focus-ring"
               >
                 <span className="flex items-center">
                   Get Started
@@ -59,7 +59,7 @@ const Home: React.FC = () => {
 
               <Link
                 to="/why-it-matters"
-                className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-white/20 hover:-translate-y-1 focus-ring"
+                className="group px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:bg-white/20 focus-ring"
               >
                 Why It Matters
               </Link>
@@ -551,7 +551,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               to="/why-it-matters"
-              className="group px-10 py-5 bg-purple-600 hover:bg-purple-500 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-2 focus-ring"
+              className="group px-10 py-5 bg-purple-600 hover:bg-purple-500 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-xl focus-ring"
             >
               <span className="flex items-center">
                 Continue Learning: Why It Matters
@@ -563,7 +563,7 @@ const Home: React.FC = () => {
 
             <Link
               to="/quick-start"
-              className="group px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:-translate-y-2 focus-ring"
+              className="group px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/30 focus-ring"
             >
               Start Building
             </Link>

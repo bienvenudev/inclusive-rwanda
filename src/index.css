@@ -56,12 +56,10 @@
   --font-family-alt: "Inter Tight", "Inter", system-ui, sans-serif; */
 
   /* Alternative setup - Inter as primary, Lexend Deca as display/alt */
-  
-  --font-family-sans: "Inter", "Lexend Deca", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Noto Sans", Helvetica, Arial, sans-serif;
+  --font-family-sans: "Inter", "Lexend Deca", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
   --font-family-display: "Lexend Deca", "Inter Tight", system-ui, sans-serif;
   --font-family-alt: "Lexend Deca", "Inter", system-ui, sans-serif;
- 
   --font-size-base: 16px;
   --line-height-base: 1.6;
 
@@ -84,6 +82,10 @@
   --gradient-secondary: linear-gradient(135deg, #3b82f6, #06b6d4);
   --gradient-accent: linear-gradient(135deg, #10b981, #eab308);
   --gradient-warm: linear-gradient(135deg, #f97316, #ec4899);
+
+  /* Focus outline */
+  --focus-outline: #8b5cf6;
+  --focus-outline-offset: 0.25rem;
 }
 
 :root {
@@ -199,13 +201,30 @@ body {
 }
 
 /* Improved focus styles */
-.focus-ring {
-  transition: box-shadow 0.2s;
+*:focus-visible {
+  outline: 0.1875rem solid var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 0.125rem;
 }
 
+.focus-ring {
+  transition: outline 0.2s ease, outline-offset 0.2s ease;
+}
+
+.focus-ring:focus-visible {
+  outline: 0.1875rem solid var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Legacy focus support for older browsers */
 .focus-ring:focus {
+  outline: 0.1875rem solid var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Remove focus styles for mouse/touch users */
+.focus-ring:focus:not(:focus-visible) {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
 }
 
 /* Custom selection */
