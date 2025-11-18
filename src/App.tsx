@@ -7,9 +7,7 @@ function App() {
     <div className="min-h-screen bg-gray-950">
       <ScrollToTop />
       <Navigation />
-      <div className="container">
         <Outlet />
-      </div>
     </div>
   );
 }
