@@ -5,946 +5,743 @@ const Resources: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('tools');
 
   return (
-    <main id="main-content" className="min-h-[calc(100vh-80px)] py-8">
+    <main id="main-content" className="min-h-[calc(100vh-80px)] bg-linear-to-br from-gray-950 via-gray-900 to-gray-800">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-linear-to-br from-gray-900 to-gray-800 mx-4 mb-16 rounded-none md:rounded-xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-linear-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
-          Resources & Community
-        </h1>
-        <p className="text-lg md:text-2xl text-gray-50 mb-4 font-medium">
-          Tools, Learning Materials & Rwanda Community
-        </p>
-        <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed px-4">
-          Everything you need to continue your accessibility journey, from browser extensions to local communities in Rwanda.
-        </p>
+      <section className="relative overflow-hidden py-20 lg:py-32">
+        {/* Background gradient overlay */}
+        <div className="absolute inset-0 bg-linear-to-r from-blue-600/20 via-purple-600/20 to-cyan-600/20"></div>
+
+        <div className="relative z-10 container mx-auto px-6 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 floating-element">
+            <svg className="w-8 h-8 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C20.168 18.477 18.582 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+            </svg>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-linear-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent leading-tight">
+            Your Accessibility
+            <br />
+            <span className="text-white">Toolkit</span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+            Everything you need to continue your accessibility journey — from professional tools
+            to Rwanda's growing inclusive tech community.
+          </p>
+
+          <div className="flex flex-wrap justify-center gap-4 text-gray-400">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+              <span>40+ Tools & Resources</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+              <span>Rwanda Community Network</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-cyan-500 rounded-full"></div>
+              <span>Expert Guidelines</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* Category Navigation */}
-      <section className="mb-12">
-        <div className="flex flex-wrap justify-center gap-2 bg-gray-900 rounded-lg p-2 max-w-4xl mx-auto">
-          {[
-            { id: 'tools', label: '🛠️ Tools & Extensions', count: '15+' },
-            { id: 'learning', label: '📚 Learning Resources', count: '20+' },
-            { id: 'rwanda', label: '🇷🇼 Rwanda Community', count: '8+' },
-            { id: 'guidelines', label: '📋 Guidelines & Standards', count: '12+' }
-          ].map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setActiveCategory(category.id)}
-              className={`px-4 py-3 rounded-md text-base font-medium transition-all duration-200 flex items-center gap-2 ${activeCategory === category.id
-                ? 'bg-blue-500 text-white shadow-lg'
-                : 'text-gray-200 hover:text-gray-50 hover:bg-gray-800'
-                }`}
-            >
-              <span>{category.label}</span>
-              <span className={`text-sm px-2 py-1 rounded-full ${activeCategory === category.id
-                ? 'bg-white/20'
-                : 'bg-blue-500/20 text-blue-500'
-                }`}>
-                {category.count}
-              </span>
-            </button>
-          ))}
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-6">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { id: 'tools', label: 'Tools & Extensions', icon: '🛠️', count: '15+', description: 'Browser extensions and development tools' },
+                { id: 'learning', label: 'Learning Resources', icon: '📚', count: '20+', description: 'Courses, documentation, and guides' },
+                { id: 'rwanda', label: 'Rwanda Community', icon: '🇷🇼', count: '8+', description: 'Local organizations and initiatives' },
+                { id: 'guidelines', label: 'Guidelines & Standards', icon: '📋', count: '12+', description: 'WCAG standards and checklists' }
+              ].map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setActiveCategory(category.id)}
+                  className={`group relative p-6 rounded-2xl text-left transition-all duration-300 ${activeCategory === category.id
+                    ? 'bg-linear-to-br from-blue-500/20 to-purple-500/20 border border-blue-500/30 shadow-lg shadow-blue-500/10'
+                    : 'bg-gray-800/50 border border-gray-700/50 hover:bg-gray-700/50 hover:border-gray-600/50'
+                    }`}
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="text-2xl">{category.icon}</span>
+                    <div className={`px-2 py-1 text-xs font-medium rounded-full ${activeCategory === category.id
+                      ? 'bg-blue-500/30 text-blue-300'
+                      : 'bg-gray-700/50 text-gray-400'
+                      }`}>
+                      {category.count}
+                    </div>
+                  </div>
+                  <h3 className={`font-semibold mb-2 ${activeCategory === category.id ? 'text-white' : 'text-gray-200 group-hover:text-white'
+                    }`}>
+                    {category.label}
+                  </h3>
+                  <p className={`text-sm ${activeCategory === category.id ? 'text-gray-300' : 'text-gray-400'
+                    }`}>
+                    {category.description}
+                  </p>
+
+                  {activeCategory === category.id && (
+                    <div className="absolute -inset-0.5 bg-linear-to-r from-blue-500 to-purple-500 rounded-2xl opacity-30 blur-sm -z-10"></div>
+                  )}
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Tools & Extensions Section */}
       {activeCategory === 'tools' && (
-        <section className="py-8">
-          <h2 className="text-3xl font-semibold mb-8 text-center text-gray-50">
-            Essential Tools & Browser Extensions
-          </h2>
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Essential Tools & Extensions
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Professional-grade tools to test, analyze, and improve web accessibility
+                </p>
+              </div>
 
-          {/* Testing Tools */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">🧪</span>
-              Accessibility Testing Tools
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-              <a
-                href="https://wave.webaim.org/extension/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">W</span>
+              {/* Testing Tools */}
+              <div className="mb-20">
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-2xl">🧪</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-50">WAVE</h4>
-                    <p className="text-sm text-gray-400">WebAIM</p>
+                    <h3 className="text-2xl font-bold text-white">Accessibility Testing Tools</h3>
+                    <p className="text-gray-400">Discover issues and validate your implementations</p>
                   </div>
                 </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Visual accessibility evaluation tool that shows errors and warnings directly on your webpage.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded">Free</span>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded">Browser Extension</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-sm font-medium flex items-center">
-                  Install Extension
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
 
-              <a
-                href="https://www.deque.com/axe/devtools/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-orange-500 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">A</span>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                  {[
+                    {
+                      name: "WAVE",
+                      company: "WebAIM",
+                      icon: "W",
+                      color: "from-blue-500 to-blue-600",
+                      hoverColor: "blue-500",
+                      description: "Visual accessibility evaluation tool that shows errors and warnings directly on your webpage.",
+                      tags: [{ label: "Free", color: "green" }, { label: "Browser Extension", color: "blue" }],
+                      url: "https://wave.webaim.org/extension/",
+                      cta: "Install Extension"
+                    },
+                    {
+                      name: "axe DevTools",
+                      company: "Deque Systems",
+                      icon: "A",
+                      color: "from-orange-500 to-orange-600",
+                      hoverColor: "orange-500",
+                      description: "Industry-standard accessibility testing integrated into browser developer tools.",
+                      tags: [{ label: "Free", color: "green" }, { label: "DevTools", color: "purple" }],
+                      url: "https://www.deque.com/axe/devtools/",
+                      cta: "Get axe DevTools"
+                    },
+                    {
+                      name: "Lighthouse",
+                      company: "Google",
+                      icon: "L",
+                      color: "from-red-500 to-red-600",
+                      hoverColor: "red-500",
+                      description: "Built into Chrome DevTools, provides accessibility audits along with performance metrics.",
+                      tags: [{ label: "Free", color: "green" }, { label: "Built-in", color: "gray" }],
+                      url: "https://developers.google.com/web/tools/lighthouse/",
+                      cta: "Learn More"
+                    }
+                  ].map((tool, index) => (
+                    <a
+                      key={index}
+                      href={tool.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 p-8 rounded-2xl hover:border-blue-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blue-500/10"
+                    >
+                      <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                      <div className="relative z-10">
+                        <div className="flex items-center mb-4">
+                          <div className={`w-12 h-12 bg-linear-to-r ${tool.color} rounded-lg flex items-center justify-center mr-4`}>
+                            <span className="text-white font-bold text-lg">{tool.icon}</span>
+                          </div>
+                          <div>
+                            <h4 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">{tool.name}</h4>
+                            <p className="text-gray-400 text-sm">{tool.company}</p>
+                          </div>
+                        </div>
+
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                          {tool.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {tool.tags.map((tag, tagIndex) => (
+                            <span key={tagIndex} className={`px-3 py-1 bg-${tag.color}-500/20 text-${tag.color}-400 text-sm rounded-full border border-${tag.color}-500/30`}>
+                              {tag.label}
+                            </span>
+                          ))}
+                        </div>
+
+                        <div className="flex items-center text-blue-400 group-hover:text-blue-300 font-medium">
+                          {tool.cta}
+                          <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
+
+              {/* Development Tools */}
+              <div className="mb-12">
+                <div className="flex items-center mb-8">
+                  <div className="w-12 h-12 bg-linear-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mr-4">
+                    <span className="text-2xl">⚡</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-50">axe DevTools</h4>
-                    <p className="text-sm text-gray-400">Deque Systems</p>
+                    <h3 className="text-2xl font-bold text-white">Development & Code Tools</h3>
+                    <p className="text-gray-400">Integrate accessibility into your development workflow</p>
                   </div>
                 </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Industry-standard accessibility testing integrated into browser developer tools.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-sm rounded">DevTools</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Get axe DevTools
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
 
-              <a
-                href="https://developers.google.com/web/tools/lighthouse/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-red-500 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">L</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">Lighthouse</h4>
-                    <p className="text-sm text-gray-400">Google</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Built into Chrome DevTools, provides accessibility audits along with performance metrics.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-sm rounded">Built-in</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Learn More
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+                  {[
+                    {
+                      name: "axe Accessibility Linter",
+                      company: "VS Code Extension",
+                      icon: "VS",
+                      color: "from-blue-600 to-blue-700",
+                      description: "Real-time accessibility linting in your code editor as you write HTML and JSX.",
+                      tags: [{ label: "Free", color: "green" }, { label: "VS Code", color: "blue" }],
+                      url: "https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter",
+                      cta: "Install Extension"
+                    },
+                    {
+                      name: "eslint-plugin-jsx-a11y",
+                      company: "NPM Package",
+                      icon: "E",
+                      color: "from-green-600 to-green-700",
+                      description: "ESLint plugin that catches accessibility issues in React JSX elements during development.",
+                      tags: [{ label: "Free", color: "green" }, { label: "React", color: "orange" }],
+                      url: "https://www.npmjs.com/package/eslint-plugin-jsx-a11y",
+                      cta: "View on NPM"
+                    },
+                    {
+                      name: "Pa11y",
+                      company: "Command Line Tool",
+                      icon: "P",
+                      color: "from-purple-600 to-purple-700",
+                      description: "Command-line accessibility testing tool that can be integrated into CI/CD pipelines.",
+                      tags: [{ label: "Free", color: "green" }, { label: "CLI", color: "gray" }],
+                      url: "https://pa11y.org/",
+                      cta: "Visit Pa11y"
+                    }
+                  ].map((tool, index) => (
+                    <a
+                      key={index}
+                      href={tool.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 p-8 rounded-2xl hover:border-purple-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-purple-500/10"
+                    >
+                      <div className="absolute inset-0 bg-linear-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-              <a
-                href="https://www.tpgi.com/color-contrast-checker/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">C</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">Colour Contrast Analyser</h4>
-                    <p className="text-sm text-gray-400">TPG</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Desktop app for checking color contrast ratios and simulating color blindness.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded">Desktop App</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Download App
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
+                      <div className="relative z-10">
+                        <div className="flex items-center mb-4">
+                          <div className={`w-12 h-12 bg-linear-to-r ${tool.color} rounded-lg flex items-center justify-center mr-4`}>
+                            <span className="text-white font-bold text-sm">{tool.icon}</span>
+                          </div>
+                          <div>
+                            <h4 className="text-xl font-bold text-white group-hover:text-purple-400 transition-colors">{tool.name}</h4>
+                            <p className="text-gray-400 text-sm">{tool.company}</p>
+                          </div>
+                        </div>
 
-              <a
-                href="https://www.getstark.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-indigo-500 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">S</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">Stark</h4>
-                    <p className="text-sm text-gray-400">Stark Lab</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Design plugin for Figma, Sketch, and Adobe XD to check accessibility during design phase.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded">Freemium</span>
-                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-sm rounded">Design Tools</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Get Stark
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
+                        <p className="text-gray-300 mb-6 leading-relaxed">
+                          {tool.description}
+                        </p>
 
-              <a
-                href="https://github.com/appt-org/taba11y"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-teal-500 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">T</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">taba11y</h4>
-                    <p className="text-sm text-gray-400">Appt.org</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Browser extension that visualizes the tab order and keyboard navigation flow of web pages.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-sm rounded">Browser Extension</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Get Extension
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {tool.tags.map((tag, tagIndex) => (
+                            <span key={tagIndex} className={`px-3 py-1 bg-${tag.color}-500/20 text-${tag.color}-400 text-sm rounded-full border border-${tag.color}-500/30`}>
+                              {tag.label}
+                            </span>
+                          ))}
+                        </div>
 
+                        <div className="flex items-center text-purple-400 group-hover:text-purple-300 font-medium">
+                          {tool.cta}
+                          <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-
-          {/* Development Tools */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">⚡</span>
-              Development & Code Tools
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-              <a
-                href="https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">VS</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">axe Accessibility Linter</h4>
-                    <p className="text-sm text-gray-400">VS Code Extension</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Real-time accessibility linting in your code editor as you write HTML and JSX.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-sm rounded">VS Code</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Install Extension
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://www.npmjs.com/package/eslint-plugin-jsx-a11y"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-green-600 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">E</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">eslint-plugin-jsx-a11y</h4>
-                    <p className="text-sm text-gray-400">NPM Package</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  ESLint plugin that catches accessibility issues in React JSX elements during development.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-sm rounded">React</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  View on NPM
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://pa11y.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <div className="flex items-center mb-3">
-                  <div className="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center mr-3">
-                    <span className="text-white font-bold">P</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-50">Pa11y</h4>
-                    <p className="text-sm text-gray-400">Command Line Tool</p>
-                  </div>
-                </div>
-                <p className="text-base text-gray-200 mb-3">
-                  Command-line accessibility testing tool that can be integrated into CI/CD pipelines.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-gray-500/20 text-gray-400 text-sm rounded">CLI</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Visit Pa11y
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-            </div>
-          </div>
-
         </section>
       )}
 
       {/* Learning Resources Section */}
       {activeCategory === 'learning' && (
-        <section className="py-8">
-          <h2 className="text-3xl font-semibold mb-8 text-center text-gray-50">
-            Learning Resources & Documentation
-          </h2>
-
-          {/* Official Documentation */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">📚</span>
-              Official Documentation & Guidelines
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-              <a
-                href="https://www.w3.org/WAI/WCAG21/quickref/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">Web Content Accessibility Guidelines (WCAG) 2.1</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  The international standard for web accessibility. Comprehensive guidelines with success criteria and techniques.
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Learning Resources
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Comprehensive guides, courses, and documentation to master accessibility
                 </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-red-500/20 text-red-400 text-sm rounded">Level A</span>
-                  <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded">Level AA</span>
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Level AAA</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  View WCAG Guidelines
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://developer.mozilla.org/en-US/docs/Web/Accessibility"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">MDN Web Accessibility</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Practical accessibility documentation with code examples and best practices for web developers.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-sm rounded">Beginner Friendly</span>
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Code Examples</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Visit MDN Accessibility Docs
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://webaim.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">WebAIM Resources</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Practical tutorials, articles, and tools for implementing web accessibility from Utah State University.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-sm rounded">Screen Readers</span>
-                  <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-sm rounded">Testing</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Explore WebAIM
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://www.a11yproject.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">A11y Project</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Community-driven effort to make digital accessibility easier with patterns and resources.
-                </p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-teal-500/20 text-teal-400 text-sm rounded">Community</span>
-                  <span className="px-2 py-1 bg-pink-500/20 text-pink-400 text-sm rounded">Patterns</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Visit A11y Project
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-            </div>
-          </div>
-
-          {/* Online Courses */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">🎓</span>
-              Online Courses & Certifications
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-              <a
-                href="https://www.udacity.com/course/web-accessibility--ud891"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">Web Accessibility by Google</h4>
-                <p className="text-base text-gray-200 mb-3">Udacity course covering fundamentals of accessible web development.</p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-sm rounded">4 weeks</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Start Course
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://www.futurelearn.com/courses/digital-accessibility"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">Digital Accessibility</h4>
-                <p className="text-base text-gray-200 mb-3">University of Southampton course on Futurelearn covering WCAG principles.</p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Free</span>
-                  <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-sm rounded">Certificate</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Join Course
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://dequeuniversity.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">Deque University</h4>
-                <p className="text-base text-gray-200 mb-3">Comprehensive accessibility training with certification programs for developers.</p>
-                <div className="flex gap-2 mb-3">
-                  <span className="px-2 py-1 bg-yellow-500/20 text-yellow-400 text-sm rounded">Paid</span>
-                  <span className="px-2 py-1 bg-red-500/20 text-red-400 text-sm rounded">Professional</span>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Explore Training
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-            </div>
-          </div>
-
-          {/* Books & Publications */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">📖</span>
-              Recommended Books
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">"Inclusive Design Patterns" by Heydon Pickering</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  Practical patterns for creating accessible user interface components and layouts.
-                </p>
-                <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Design Patterns</span>
               </div>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">"Accessibility for Everyone" by Laura Kalbag</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  A practical guide to building accessible websites that work for everyone.
-                </p>
-                <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-sm rounded">Beginner Friendly</span>
+              {/* Quick Learning Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+                {[
+                  {
+                    title: "WCAG 2.1 Guidelines",
+                    description: "International standard for web accessibility with comprehensive guidelines",
+                    icon: "📋",
+                    color: "from-blue-500 to-cyan-500",
+                    url: "https://www.w3.org/WAI/WCAG21/quickref/",
+                    tags: ["Official", "Complete"]
+                  },
+                  {
+                    title: "MDN Accessibility Docs",
+                    description: "Practical documentation with code examples for web developers",
+                    icon: "📚",
+                    color: "from-green-500 to-emerald-500",
+                    url: "https://developer.mozilla.org/en-US/docs/Web/Accessibility",
+                    tags: ["Beginner-friendly", "Examples"]
+                  },
+                  {
+                    title: "WebAIM Resources",
+                    description: "Tutorials and tools from Utah State University accessibility experts",
+                    icon: "🎓",
+                    color: "from-purple-500 to-violet-500",
+                    url: "https://webaim.org/",
+                    tags: ["Tutorials", "Testing"]
+                  }
+                ].map((resource, index) => (
+                  <a
+                    key={index}
+                    href={resource.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 p-8 rounded-2xl hover:border-gray-600/50 transition-all duration-300 hover:scale-105"
+                  >
+                    <div className={`w-16 h-16 bg-linear-to-r ${resource.color} rounded-2xl flex items-center justify-center mb-6`}>
+                      <span className="text-3xl">{resource.icon}</span>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                      {resource.title}
+                    </h3>
+
+                    <p className="text-gray-300 mb-6 leading-relaxed">
+                      {resource.description}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2">
+                      {resource.tags.map((tag, tagIndex) => (
+                        <span key={tagIndex} className="px-3 py-1 bg-gray-700/50 text-gray-300 text-sm rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </a>
+                ))}
               </div>
 
+              {/* Free Courses Section */}
+              <div className="bg-linear-to-br from-gray-800/30 to-gray-900/30 border border-gray-700/50 rounded-3xl p-12">
+                <div className="text-center mb-12">
+                  <h3 className="text-3xl font-bold text-white mb-4">Free Online Courses</h3>
+                  <p className="text-gray-300 text-lg">Start your accessibility education with these excellent free courses</p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {[
+                    {
+                      title: "Web Accessibility by Google",
+                      platform: "Udacity",
+                      duration: "4 weeks",
+                      level: "Beginner",
+                      description: "Comprehensive course covering fundamentals of accessible web development.",
+                      url: "https://www.udacity.com/course/web-accessibility--ud891"
+                    },
+                    {
+                      title: "Digital Accessibility",
+                      platform: "FutureLearn",
+                      duration: "3 weeks",
+                      level: "Intermediate",
+                      description: "University of Southampton course covering WCAG principles and implementation.",
+                      url: "https://www.futurelearn.com/courses/digital-accessibility"
+                    }
+                  ].map((course, index) => (
+                    <a
+                      key={index}
+                      href={course.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group bg-gray-800/50 border border-gray-700/50 p-8 rounded-2xl hover:border-blue-500/50 transition-all duration-300"
+                    >
+                      <div className="flex items-start justify-between mb-4">
+                        <div>
+                          <h4 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors mb-2">
+                            {course.title}
+                          </h4>
+                          <p className="text-blue-400 font-medium">{course.platform}</p>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-sm text-gray-400">{course.duration}</div>
+                          <div className="text-sm text-green-400">{course.level}</div>
+                        </div>
+                      </div>
+
+                      <p className="text-gray-300 mb-6">
+                        {course.description}
+                      </p>
+
+                      <div className="flex items-center text-blue-400 group-hover:text-blue-300 font-medium">
+                        Start Learning
+                        <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </div>
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
-
         </section>
       )}
 
       {/* Rwanda Community Section */}
       {activeCategory === 'rwanda' && (
-        <section className="py-8">
-          <h2 className="text-3xl font-semibold mb-8 text-center text-gray-50">
-            Rwanda Accessibility Community
-          </h2>
-
-          {/* Government & Policy */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">🏛️</span>
-              Government & Policy Initiatives
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-              <a
-                href="https://www.minict.gov.rw/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">Ministry of ICT and Innovation (MINICT)</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Leading Rwanda's digital transformation with inclusive technology policies and accessibility standards.
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
+                  Rwanda Accessibility Community
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Connect with local organizations, government initiatives, and tech communities building inclusive Rwanda
                 </p>
-                <div className="space-y-2 text-base mb-3">
-                  <p className="text-gray-200">• Digital Rwanda 2024 Strategy</p>
-                  <p className="text-gray-200">• ICT Accessibility Guidelines</p>
-                  <p className="text-gray-200">• Smart Rwanda Master Plan</p>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Visit MINICT
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-              <a
-                href="https://www.rura.rw/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">Rwanda Utilities Regulatory Authority (RURA)</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Regulating telecommunications and ICT services with focus on universal access and inclusion.
-                </p>
-                <div className="space-y-2 text-base mb-3">
-                  <p className="text-gray-200">• ICT Accessibility Standards</p>
-                  <p className="text-gray-200">• Digital Inclusion Policies</p>
-                  <p className="text-gray-200">• Universal Access Fund</p>
-                </div>
-                <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                  Visit RURA
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </div>
-              </a>
-
-            </div>
-          </div>
-
-          {/* Organizations */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">🤝</span>
-              Disability Rights & Advocacy Organizations
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">National Union of Disability Organizations in Rwanda (NUDOR)</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  Umbrella organization advocating for disability rights and digital inclusion.
-                </p>
-                <span className="px-2 py-1 bg-blue-500/20 text-blue-400 text-sm rounded">Advocacy</span>
               </div>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">Rwanda National Union of the Deaf (RNUD)</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  Promoting sign language accessibility and digital inclusion for the deaf community.
-                </p>
-                <span className="px-2 py-1 bg-purple-500/20 text-purple-400 text-sm rounded">Deaf Community</span>
-              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
+                {/* Government & Policy */}
+                <div className="space-y-8">
+                  <div className="flex items-center mb-8">
+                    <div className="w-12 h-12 bg-linear-to-r from-red-500 to-yellow-500 rounded-xl flex items-center justify-center mr-4">
+                      <span className="text-2xl">🏛️</span>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">Government & Policy</h3>
+                      <p className="text-gray-400">Leading digital transformation initiatives</p>
+                    </div>
+                  </div>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">Union of the Blind Rwanda (UBR)</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  Advocating for digital accessibility and assistive technology for visually impaired persons.
-                </p>
-                <span className="px-2 py-1 bg-green-500/20 text-green-400 text-sm rounded">Visual Impairment</span>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Tech Community */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">💻</span>
-              Tech Communities & Events
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">Kigali Tech Community</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Local developers, designers, and tech enthusiasts promoting inclusive design practices.
-                </p>
-                <div className="space-y-2 text-base">
-                  <p className="text-gray-200">• Monthly accessibility workshops</p>
-                  <p className="text-gray-200">• Code review sessions</p>
-                  <p className="text-gray-200">• Inclusive design hackathons</p>
-                </div>
-              </div>
-
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-gray-50 mb-2">Women in Tech Rwanda</h4>
-                <p className="text-base text-gray-200 mb-4">
-                  Empowering women in technology with focus on inclusive and accessible digital solutions.
-                </p>
-                <div className="space-y-2 text-base">
-                  <p className="text-gray-200">• Accessibility training programs</p>
-                  <p className="text-gray-200">• Mentorship for inclusive design</p>
-                  <p className="text-gray-200">• Community outreach projects</p>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Educational Institutions */}
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">🎓</span>
-              Educational Institutions & Programs
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-              <a
-                href="https://www.alueducation.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">African Leadership University (ALU)</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  Computing and software engineering programs emphasizing inclusive technology and social impact.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="px-2 py-1 bg-orange-500/20 text-orange-400 text-sm rounded">Higher Education</span>
-                  <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                    Visit ALU
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                  <div className="space-y-6">
+                    {[
+                      {
+                        name: "Ministry of ICT and Innovation (MINICT)",
+                        description: "Leading Rwanda's digital transformation with inclusive technology policies",
+                        initiatives: ["Digital Rwanda 2024", "ICT Accessibility Guidelines", "Smart Rwanda Master Plan"],
+                        url: "https://www.minict.gov.rw/"
+                      },
+                      {
+                        name: "Rwanda Utilities Regulatory Authority (RURA)",
+                        description: "Regulating telecommunications with focus on universal access",
+                        initiatives: ["ICT Accessibility Standards", "Digital Inclusion Policies", "Universal Access Fund"],
+                        url: "https://www.rura.rw/"
+                      }
+                    ].map((org, index) => (
+                      <a
+                        key={index}
+                        href={org.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 p-6 rounded-2xl hover:border-yellow-500/50 transition-all duration-300"
+                      >
+                        <h4 className="text-lg font-bold text-white mb-3 hover:text-yellow-400 transition-colors">
+                          {org.name}
+                        </h4>
+                        <p className="text-gray-300 mb-4">{org.description}</p>
+                        <ul className="space-y-1">
+                          {org.initiatives.map((initiative, idx) => (
+                            <li key={idx} className="text-sm text-gray-400 flex items-center">
+                              <span className="w-1.5 h-1.5 bg-yellow-500 rounded-full mr-2"></span>
+                              {initiative}
+                            </li>
+                          ))}
+                        </ul>
+                      </a>
+                    ))}
                   </div>
                 </div>
-              </a>
 
-              <a
-                href="https://www.ur.ac.rw/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-gray-900 border border-gray-600 p-6 rounded-lg hover:border-blue-500 hover:bg-gray-800 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-gray-950"
-              >
-                <h4 className="font-semibold text-gray-50 mb-2">University of Rwanda - College of Science and Technology</h4>
-                <p className="text-base text-gray-200 mb-3">
-                  ICT programs incorporating accessibility and universal design principles in curriculum.
-                </p>
-                <div className="flex items-center justify-between">
-                  <span className="px-2 py-1 bg-red-500/20 text-red-400 text-sm rounded">Public University</span>
-                  <div className="text-blue-400 hover:text-blue-300 text-base font-medium flex items-center">
-                    Visit UR
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
+                {/* Tech Community */}
+                <div className="space-y-8">
+                  <div className="flex items-center mb-8">
+                    <div className="w-12 h-12 bg-linear-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center mr-4">
+                      <span className="text-2xl">💻</span>
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-white">Tech Communities</h3>
+                      <p className="text-gray-400">Building inclusive technology together</p>
+                    </div>
+                  </div>
+
+                  <div className="space-y-6">
+                    {[
+                      {
+                        name: "Kigali Tech Community",
+                        description: "Local developers promoting inclusive design practices",
+                        activities: ["Monthly accessibility workshops", "Code review sessions", "Inclusive design hackathons"]
+                      },
+                      {
+                        name: "Women in Tech Rwanda",
+                        description: "Empowering women with focus on accessible solutions",
+                        activities: ["Accessibility training programs", "Mentorship for inclusive design", "Community outreach projects"]
+                      },
+                      {
+                        name: "African Leadership University (ALU)",
+                        description: "Computing programs emphasizing inclusive technology",
+                        activities: ["Social impact projects", "Accessibility research", "Student-led initiatives"]
+                      }
+                    ].map((community, index) => (
+                      <div
+                        key={index}
+                        className="bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 p-6 rounded-2xl"
+                      >
+                        <h4 className="text-lg font-bold text-white mb-3">
+                          {community.name}
+                        </h4>
+                        <p className="text-gray-300 mb-4">{community.description}</p>
+                        <ul className="space-y-1">
+                          {community.activities.map((activity, idx) => (
+                            <li key={idx} className="text-sm text-gray-400 flex items-center">
+                              <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                              {activity}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              </a>
-
+              </div>
             </div>
           </div>
-
         </section>
       )}
 
       {/* Guidelines & Standards Section */}
       {activeCategory === 'guidelines' && (
-        <section className="py-8">
-          <h2 className="text-3xl font-semibold mb-8 text-center text-gray-50">
-            Guidelines & Standards Reference
-          </h2>
-
-          {/* WCAG Quick Reference */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">📋</span>
-              WCAG 2.1 Quick Reference
-            </h3>
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
-
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-red-400 mb-4 flex items-center">
-                  <span className="w-6 h-6 bg-red-500 rounded mr-2 flex items-center justify-center text-white text-xs font-bold">A</span>
-                  Level A (Minimum)
-                </h4>
-                <ul className="space-y-2 text-base text-gray-200">
-                  <li>• Provide text alternatives for images</li>
-                  <li>• Provide captions for videos</li>
-                  <li>• Ensure keyboard accessibility</li>
-                  <li>• Use proper heading structure</li>
-                  <li>• Provide meaningful link text</li>
-                  <li>• Ensure page has valid HTML</li>
-                </ul>
+        <section className="py-20 lg:py-32">
+          <div className="container mx-auto px-6">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-linear-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  Guidelines & Standards
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Master WCAG standards and implementation best practices
+                </p>
               </div>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-yellow-400 mb-4 flex items-center">
-                  <span className="w-6 h-6 bg-yellow-500 rounded mr-2 flex items-center justify-center text-white text-xs font-bold">AA</span>
-                  Level AA (Standard)
-                </h4>
-                <ul className="space-y-2 text-base text-gray-200">
-                  <li>• Color contrast ratio of 4.5:1</li>
-                  <li>• Text can be resized to 200%</li>
-                  <li>• Focus is clearly visible</li>
-                  <li>• Audio content has text alternative</li>
-                  <li>• Forms have proper labels</li>
-                  <li>• Error identification and suggestions</li>
-                </ul>
+              {/* WCAG Levels Overview */}
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+                {[
+                  {
+                    level: "A",
+                    title: "Level A (Minimum)",
+                    color: "from-red-500 to-red-600",
+                    bgColor: "red-500",
+                    items: [
+                      "Text alternatives for images",
+                      "Captions for videos",
+                      "Keyboard accessibility",
+                      "Proper heading structure",
+                      "Meaningful link text",
+                      "Valid HTML markup"
+                    ]
+                  },
+                  {
+                    level: "AA",
+                    title: "Level AA (Standard)",
+                    color: "from-yellow-500 to-yellow-600",
+                    bgColor: "yellow-500",
+                    items: [
+                      "Color contrast ratio 4.5:1",
+                      "Text resizable to 200%",
+                      "Visible focus indicators",
+                      "Audio transcriptions",
+                      "Proper form labels",
+                      "Error identification & help"
+                    ]
+                  },
+                  {
+                    level: "AAA",
+                    title: "Level AAA (Enhanced)",
+                    color: "from-green-500 to-green-600",
+                    bgColor: "green-500",
+                    items: [
+                      "Color contrast ratio 7:1",
+                      "Sign language interpretation",
+                      "Audio descriptions",
+                      "Context-sensitive help",
+                      "No timing restrictions",
+                      "Appropriate reading level"
+                    ]
+                  }
+                ].map((wcagLevel, index) => (
+                  <div key={index} className="bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 p-8 rounded-2xl">
+                    <div className="flex items-center mb-6">
+                      <div className={`w-12 h-12 bg-linear-to-r ${wcagLevel.color} rounded-xl flex items-center justify-center mr-4`}>
+                        <span className="text-white font-bold text-xl">{wcagLevel.level}</span>
+                      </div>
+                      <div>
+                        <h3 className={`text-xl font-bold text-${wcagLevel.bgColor}-400`}>{wcagLevel.title}</h3>
+                      </div>
+                    </div>
+
+                    <ul className="space-y-3">
+                      {wcagLevel.items.map((item, itemIndex) => (
+                        <li key={itemIndex} className="text-gray-300 flex items-start">
+                          <span className={`w-2 h-2 bg-${wcagLevel.bgColor}-400 rounded-full mr-3 mt-2 shrink-0`}></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
 
-              <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-                <h4 className="font-semibold text-green-400 mb-4 flex items-center">
-                  <span className="w-6 h-6 bg-green-500 rounded mr-2 flex items-center justify-center text-white text-xs font-bold">AAA</span>
-                  Level AAA (Enhanced)
-                </h4>
-                <ul className="space-y-2 text-base text-gray-200">
-                  <li>• Color contrast ratio of 7:1</li>
-                  <li>• Sign language interpretation</li>
-                  <li>• Audio descriptions for video</li>
-                  <li>• Context-sensitive help</li>
-                  <li>• No timing restrictions</li>
-                  <li>• Reading level appropriate</li>
-                </ul>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Implementation Checklist */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-semibold mb-6 text-gray-50 flex items-center">
-              <span className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center mr-3">✅</span>
-              Implementation Checklist
-            </h3>
-            <div className="bg-gray-900 border border-gray-600 p-8 rounded-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <div>
-                  <h4 className="font-semibold text-gray-50 mb-4">🎨 Design Phase</h4>
-                  <ul className="space-y-2 text-base text-gray-200">
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Design with sufficient color contrast
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Don't rely solely on color to convey information
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Design clear focus indicators
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Ensure interactive elements are large enough
-                    </li>
-                  </ul>
+              {/* Implementation Checklist */}
+              <div className="bg-linear-to-br from-gray-800/30 to-gray-900/30 border border-gray-700/50 rounded-3xl p-12">
+                <div className="text-center mb-12">
+                  <h3 className="text-3xl font-bold text-white mb-4">Implementation Checklist</h3>
+                  <p className="text-gray-300 text-lg">A practical workflow for building accessible web experiences</p>
                 </div>
 
-                <div>
-                  <h4 className="font-semibold text-gray-50 mb-4">💻 Development Phase</h4>
-                  <ul className="space-y-2 text-base text-gray-200">
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Use semantic HTML elements
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Add proper ARIA labels and roles
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Implement keyboard navigation
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Provide meaningful alt text for images
-                    </li>
-                  </ul>
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                  {[
+                    {
+                      phase: "Design",
+                      icon: "🎨",
+                      tasks: [
+                        "Design with sufficient color contrast",
+                        "Don't rely solely on color",
+                        "Design clear focus indicators",
+                        "Ensure interactive elements are large enough"
+                      ]
+                    },
+                    {
+                      phase: "Development",
+                      icon: "💻",
+                      tasks: [
+                        "Use semantic HTML elements",
+                        "Add proper ARIA labels and roles",
+                        "Implement keyboard navigation",
+                        "Provide meaningful alt text"
+                      ]
+                    },
+                    {
+                      phase: "Testing",
+                      icon: "🧪",
+                      tasks: [
+                        "Test with keyboard navigation",
+                        "Test with screen readers",
+                        "Run automated audits",
+                        "User testing with disabilities"
+                      ]
+                    },
+                    {
+                      phase: "Maintenance",
+                      icon: "🚀",
+                      tasks: [
+                        "Provide accessibility statement",
+                        "Monitor for issues",
+                        "Gather user feedback",
+                        "Regular accessibility audits"
+                      ]
+                    }
+                  ].map((phase, index) => (
+                    <div key={index} className="text-center">
+                      <div className="w-16 h-16 bg-linear-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <span className="text-3xl">{phase.icon}</span>
+                      </div>
 
-                <div>
-                  <h4 className="font-semibold text-gray-50 mb-4">🧪 Testing Phase</h4>
-                  <ul className="space-y-2 text-base text-gray-200">
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Test with keyboard navigation only
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Test with screen reader software
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Run automated accessibility audits
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Test with users who have disabilities
-                    </li>
-                  </ul>
-                </div>
+                      <h4 className="text-xl font-bold text-white mb-6">{phase.phase} Phase</h4>
 
-                <div>
-                  <h4 className="font-semibold text-gray-50 mb-4">🚀 Launch & Maintenance</h4>
-                  <ul className="space-y-2 text-base text-gray-200">
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Provide accessibility statement
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Monitor for accessibility issues
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Gather user feedback
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-4 h-4 bg-blue-500 rounded-sm mr-2 mt-0.5 shrink-0"></span>
-                      Regular accessibility audits
-                    </li>
-                  </ul>
+                      <ul className="space-y-3 text-left">
+                        {phase.tasks.map((task, taskIndex) => (
+                          <li key={taskIndex} className="text-gray-300 flex items-start text-sm">
+                            <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 mt-2 shrink-0"></span>
+                            {task}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
                 </div>
-
               </div>
             </div>
           </div>
-
         </section>
       )}
 
       {/* Call to Action */}
-      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
-        <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-50">
-            Ready to Build Inclusive Rwanda?
-          </h2>
-          <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            You now have all the tools, knowledge, and community connections to start building accessible web experiences.
-            Every small step towards accessibility makes a big difference for users in Rwanda and beyond.
-          </p>
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center bg-linear-to-br from-gray-800/50 to-gray-900/50 border border-gray-700/50 rounded-3xl p-12">
+            <div className="mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Ready to Build Inclusive Rwanda?
+              </h2>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                You now have all the tools, knowledge, and community connections to start building
+                accessible web experiences. Every small step towards accessibility makes a big difference
+                for users in Rwanda and beyond.
+              </p>
+            </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <Link
-              to="/quick-start"
-              className="inline-flex items-center bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-            >
-              ← Start Your Accessibility Journey
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
+              <Link
+                to="/quick-start"
+                className="inline-flex items-center bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all duration-200 hover:scale-105"
+              >
+                ← Start Your Journey
+              </Link>
 
-            <Link
-              to="/"
-              className="inline-flex items-center bg-gray-800 hover:bg-gray-950 border border-gray-600 text-gray-50 px-6 py-4 rounded-lg text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-            >
-              Back to Home
-            </Link>
-          </div>
+              <Link
+                to="/"
+                className="inline-flex items-center bg-gray-800 hover:bg-gray-700 border border-gray-600 text-gray-200 px-6 py-4 rounded-xl font-medium transition-all duration-200"
+              >
+                Back to Home
+              </Link>
+            </div>
 
-          <div className="text-base text-gray-400 space-y-1">
-            <p>🌟 <span className="text-blue-500">Remember:</span> Accessibility is not a destination, it's a journey</p>
-            <p>🤝 <span className="text-blue-500">Together:</span> We can make the web inclusive for all Rwandans</p>
+            <div className="space-y-2 text-gray-400">
+              <p>🌟 <span className="text-blue-400">Remember:</span> Accessibility is a journey, not a destination</p>
+              <p>🤝 <span className="text-blue-400">Together:</span> We can make the web inclusive for all Rwandans</p>
+            </div>
           </div>
         </div>
       </section>

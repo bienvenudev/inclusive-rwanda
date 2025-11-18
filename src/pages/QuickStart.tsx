@@ -14,147 +14,200 @@ const QuickStart: React.FC = () => {
   };
 
   return (
-    <main id="main-content" className="min-h-[calc(100vh-80px)] py-8">
+    <main id="main-content" className="min-h-[calc(100vh-80px)]">
       {/* Hero Section */}
-      <section className="text-center py-16 bg-linear-to-br from-gray-900 to-gray-800 mx-4 mb-16 rounded-none md:rounded-xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-linear-to-r from-blue-500 to-blue-300 bg-clip-text text-transparent">
-          Quick Start Guide
-        </h1>
-        <p className="text-lg md:text-2xl text-gray-50 mb-4 font-medium">
-          7 Essential Steps to Accessible Web Development
-        </p>
-        <p className="text-base md:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed px-4">
-          Practical tips you can implement today to make your websites more inclusive and accessible.
-        </p>
+      <section className="relative overflow-hidden py-20 lg:py-32">
+        {/* Background decoration */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute -top-40 -right-32 w-80 h-80 rounded-full bg-linear-to-br from-emerald-500/20 to-cyan-500/20 blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-32 w-80 h-80 rounded-full bg-linear-to-br from-blue-500/20 to-purple-500/20 blur-3xl"></div>
+        </div>
+
+        <div className="container relative text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 floating-element">
+            <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold mb-8 leading-tight font-display">
+            <span className="text-emerald-400">Quick Start</span>
+            <br />
+            <span className="text-white">Guide</span>
+          </h1>
+
+          <p className="text-xl md:text-2xl text-gray-300 mb-6 font-medium leading-relaxed font-alt">
+            7 Essential Steps to Accessible Web Development
+          </p>
+
+          <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+            Practical tips you can implement today to make your websites more inclusive and accessible for everyone.
+          </p>
+        </div>
       </section>
 
       {/* Quick Wins Checklist */}
-      <section className="py-16">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-gray-50">
-          Your Accessibility Checklist
-        </h2>
-        <p className="text-center text-gray-200 mb-12 max-w-2xl mx-auto">
-          Start with these high-impact, easy-to-implement improvements. Check them off as you go!
-        </p>
+      <section className="py-20 lg:py-32">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-emerald-400">Your Accessibility Checklist</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Start with these high-impact, easy-to-implement improvements. Check them off as you go!
+            </p>
+          </div>
 
-        <div className="max-w-4xl mx-auto space-y-4">
-          {[
-            { id: 'semantic', text: 'Use semantic HTML elements (header, nav, main, footer)', impact: 'High' },
-            { id: 'alt-text', text: 'Add meaningful alt text to all images', impact: 'High' },
-            { id: 'headings', text: 'Structure content with proper heading hierarchy (H1 → H2 → H3)', impact: 'High' },
-            { id: 'contrast', text: 'Ensure color contrast meets WCAG AA standards (4.5:1 ratio)', impact: 'High' },
-            { id: 'keyboard', text: 'Test all functionality with keyboard navigation only', impact: 'High' },
-            { id: 'focus', text: 'Provide visible focus indicators for interactive elements', impact: 'Medium' },
-            { id: 'labels', text: 'Add proper labels to all form inputs', impact: 'High' },
-            { id: 'errors', text: 'Provide clear, helpful error messages', impact: 'Medium' },
-            { id: 'captions', text: 'Add captions or transcripts to video content', impact: 'High' },
-            { id: 'lang', text: 'Set the page language attribute (lang="en" or lang="rw")', impact: 'Low' }
-          ].map((item) => (
-            <div
-              key={item.id}
-              className="flex items-center p-4 bg-gray-900 border border-gray-600 rounded-lg hover:border-blue-500 transition-colors duration-200"
-            >
-              <button
-                onClick={() => toggleCheck(item.id)}
-                className={`w-6 h-6 rounded border-2 mr-4 flex items-center justify-center transition-all duration-200 ${checkedItems.includes(item.id)
-                  ? 'bg-blue-500 border-blue-500 text-white'
-                  : 'border-gray-600 hover:border-blue-500'
-                  }`}
-                aria-label={`Toggle ${item.text}`}
+          <div className="max-w-4xl mx-auto space-y-4">
+            {[
+              { id: 'semantic', text: 'Use semantic HTML elements (header, nav, main, footer)', impact: 'High' },
+              { id: 'alt-text', text: 'Add meaningful alt text to all images', impact: 'High' },
+              { id: 'headings', text: 'Structure content with proper heading hierarchy (H1 → H2 → H3)', impact: 'High' },
+              { id: 'contrast', text: 'Ensure color contrast meets WCAG AA standards (4.5:1 ratio)', impact: 'High' },
+              { id: 'keyboard', text: 'Test all functionality with keyboard navigation only', impact: 'High' },
+              { id: 'focus', text: 'Provide visible focus indicators for interactive elements', impact: 'Medium' },
+              { id: 'labels', text: 'Add proper labels to all form inputs', impact: 'High' },
+              { id: 'errors', text: 'Provide clear, helpful error messages', impact: 'Medium' },
+              { id: 'captions', text: 'Add captions or transcripts to video content', impact: 'High' },
+              { id: 'lang', text: 'Set the page language attribute (lang="en" or lang="rw")', impact: 'Low' }
+            ].map((item) => (
+              <div
+                key={item.id}
+                className="group flex items-center p-6 glass-card rounded-2xl glow-on-hover border border-white/10"
               >
-                {checkedItems.includes(item.id) && (
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                )}
-              </button>
-              <div className="flex-1">
-                <span className={`text-gray-50 ${checkedItems.includes(item.id) ? 'line-through opacity-60' : ''}`}>
-                  {item.text}
-                </span>
-                <span className={`ml-3 px-2 py-1 rounded-full text-xs font-medium ${item.impact === 'High' ? 'bg-red-500/20 text-red-400' :
-                  item.impact === 'Medium' ? 'bg-yellow-500/20 text-yellow-400' :
-                    'bg-green-500/20 text-green-400'
-                  }`}>
-                  {item.impact} Impact
-                </span>
+                <button
+                  onClick={() => toggleCheck(item.id)}
+                  className={`w-8 h-8 rounded-xl border-2 mr-6 flex items-center justify-center transition-all duration-300 focus-ring ${checkedItems.includes(item.id)
+                    ? 'bg-emerald-500 border-emerald-500 text-white scale-110'
+                    : 'border-white/30 hover:border-emerald-500 group-hover:scale-110'
+                    }`}
+                  aria-label={`Toggle ${item.text}`}
+                >
+                  {checkedItems.includes(item.id) && (
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  )}
+                </button>
+                <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                    <span className={`text-lg font-medium text-white ${checkedItems.includes(item.id) ? 'line-through opacity-60' : ''}`}>
+                      {item.text}
+                    </span>
+                    <span className={`w-fit px-3 py-1 rounded-full text-xs font-semibold ${item.impact === 'High' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
+                      item.impact === 'Medium' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
+                        'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                      }`}>
+                      {item.impact} Impact
+                    </span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <div className="glass-card rounded-2xl p-8 max-w-md mx-auto border border-white/10">
+              <div className="text-2xl font-bold text-white mb-4">
+                Progress: <span className="text-emerald-400">{checkedItems.length}/10</span> completed
+              </div>
+              <div className="w-full bg-white/10 rounded-full h-3 mb-2">
+                <div
+                  className="bg-linear-to-r from-emerald-500 to-cyan-500 h-3 rounded-full transition-all duration-500 ease-out"
+                  style={{ width: `${(checkedItems.length / 10) * 100}%` }}
+                ></div>
+              </div>
+              <div className="text-sm text-gray-400">
+                {checkedItems.length === 10 ? '🎉 Congratulations! You\'re ready to build accessible websites!' :
+                  checkedItems.length >= 7 ? '🚀 Almost there! Keep going!' :
+                    checkedItems.length >= 4 ? '💪 Great progress!' :
+                      '📚 Let\'s get started!'}
               </div>
             </div>
-          ))}
-        </div>
-
-        <div className="text-center mt-8">
-          <div className="text-lg font-semibold text-gray-50">
-            Progress: {checkedItems.length}/10 completed
-          </div>
-          <div className="w-full max-w-md mx-auto mt-2 bg-gray-900 rounded-full h-2">
-            <div
-              className="bg-blue-500 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${(checkedItems.length / 10) * 100}%` }}
-            ></div>
           </div>
         </div>
       </section>
 
       {/* Accessibility Tips Video */}
-      <section className="py-16 text-center">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
-          Essential Implementation Tips
-        </h2>
-        <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed px-4">
-          Now that you know what to implement, watch these practical tips to learn <em>how</em> to do it effectively.
-        </p>
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="relative aspect-video max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/qr0ujkLLgmE"
-              title="Web Accessibility: 7 Easy Tips for Developers"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              aria-describedby="tips-video-description"
-            ></iframe>
+      <section className="py-20 lg:py-32 relative">
+        {/* Background decoration */}
+        <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-linear-to-br from-blue-500/10 to-purple-500/10 blur-3xl"></div>
+
+        <div className="container relative text-center">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-blue-400">Essential Implementation Tips</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Now that you know what to implement, watch these practical tips to learn <em className="text-blue-400">how</em> to do it effectively.
+            </p>
           </div>
-          <p id="tips-video-description" className="text-base text-gray-400 mt-4 italic">
-            Seven practical accessibility tips that developers can implement quickly to improve user experience.
-          </p>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/qr0ujkLLgmE"
+                  title="Web Accessibility: 7 Easy Tips for Developers"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  aria-describedby="tips-video-description"
+                ></iframe>
+              </div>
+              <div className="p-6 bg-white/5 backdrop-blur-sm">
+                <p id="tips-video-description" className="text-sm text-gray-400 text-center italic">
+                  Seven practical accessibility tips that developers can implement quickly to improve user experience.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Code Examples Tabs */}
-      <section className="py-16 bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
-        <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-gray-50">
-            Code Examples & Best Practices
-          </h2>
+      <section className="py-20 lg:py-32 relative">
+        {/* Background decoration */}
+        <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full bg-linear-to-br from-purple-500/10 to-pink-500/10 blur-3xl -translate-y-1/2"></div>
+
+        <div className="container relative">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-purple-400">Code Examples & Best Practices</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              See practical before-and-after examples of accessible code implementation.
+            </p>
+          </div>
 
           <div className="max-w-6xl mx-auto">
-            <TabGroup>
-              <TabList className="flex flex-wrap max-w-fit justify-center mb-8 bg-gray-800 rounded-lg p-1 mx-auto">
-                <Tab className="px-8 py-2 rounded-md text-base font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                  Semantic HTML
-                </Tab>
-                <Tab className="px-8 py-2 rounded-md text-base font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                  Accessible Forms
-                </Tab>
-                <Tab className="px-8 py-2 rounded-md text-base font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                  Images & Media
-                </Tab>
-                <Tab className="px-8 py-2 rounded-md text-base font-medium transition-colors duration-200 data-selected:bg-blue-500 data-selected:text-white data-hover:text-gray-50 text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-300">
-                  Navigation
-                </Tab>
-              </TabList>
+            <div className="glass-card rounded-2xl p-8 border border-white/10">
+              <TabGroup>
+                <TabList className="flex flex-wrap justify-center mb-12 bg-white/5 backdrop-blur-sm rounded-2xl p-2 border border-white/10">
+                  <Tab className="px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 data-selected:bg-purple-500 data-selected:text-white data-selected:shadow-lg data-hover:text-gray-50 text-gray-300 focus-ring">
+                    Semantic HTML
+                  </Tab>
+                  <Tab className="px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 data-selected:bg-purple-500 data-selected:text-white data-selected:shadow-lg data-hover:text-gray-50 text-gray-300 focus-ring">
+                    Accessible Forms
+                  </Tab>
+                  <Tab className="px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 data-selected:bg-purple-500 data-selected:text-white data-selected:shadow-lg data-hover:text-gray-50 text-gray-300 focus-ring">
+                    Images & Media
+                  </Tab>
+                  <Tab className="px-6 py-3 rounded-xl text-base font-semibold transition-all duration-300 data-selected:bg-purple-500 data-selected:text-white data-selected:shadow-lg data-hover:text-gray-50 text-gray-300 focus-ring">
+                    Navigation
+                  </Tab>
+                </TabList>
 
-              <TabPanels>
-                {/* Semantic HTML Panel */}
-                <TabPanel>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Structure</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<div class="header">
+                <TabPanels>
+                  {/* Semantic HTML Panel */}
+                  <TabPanel>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Structure</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<div class="header">
   <div class="logo">My Site</div>
   <div class="menu">
     <div>Home</div>
@@ -165,18 +218,18 @@ const QuickStart: React.FC = () => {
   <div class="title">Welcome</div>
   <div class="text">Content here...</div>
 </div>`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-red-400 mt-3 font-medium">
+                          Screen readers can't understand the page structure
+                        </p>
                       </div>
-                      <p className="text-sm text-gray-400 mt-2">
-                        Screen readers can't understand the page structure
-                      </p>
-                    </div>
 
-                    <div>
-                      <h3 className="text-2xl font-semibold text-green-400 mb-4">✅ Semantic Structure</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<header>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-emerald-400 mb-4">✅ Semantic Structure</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<header>
   <h1>My Site</h1>
   <nav aria-label="Main navigation">
     <ul>
@@ -189,23 +242,23 @@ const QuickStart: React.FC = () => {
   <h1>Welcome</h1>
   <p>Content here...</p>
 </main>`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-emerald-400 mt-3 font-medium">
+                          Clear structure that assistive technologies understand
+                        </p>
                       </div>
-                      <p className="text-sm text-green-400 mt-2">
-                        Clear structure that assistive technologies understand
-                      </p>
                     </div>
-                  </div>
-                </TabPanel>
+                  </TabPanel>
 
-                {/* Forms Panel */}
-                <TabPanel>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Inaccessible Form</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<form>
+                  {/* Forms Panel */}
+                  <TabPanel>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Inaccessible Form</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<form>
   <div>Name</div>
   <input type="text">
   
@@ -218,18 +271,18 @@ const QuickStart: React.FC = () => {
   
   <button>Submit</button>
 </form>`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-red-400 mt-3 font-medium">
+                          No connection between labels and inputs
+                        </p>
                       </div>
-                      <p className="text-xs text-gray-400 mt-2">
-                        No connection between labels and inputs
-                      </p>
-                    </div>
 
-                    <div>
-                      <h3 className="text-2xl font-semibold text-green-400 mb-4">✅ Accessible Form</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<form>
+                      <div>
+                        <h3 className="text-2xl font-semibold text-emerald-400 mb-4">✅ Accessible Form</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<form>
   <label for="name">Name *</label>
   <input 
     type="text" 
@@ -254,23 +307,23 @@ const QuickStart: React.FC = () => {
     Submit Form
   </button>
 </form>`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-emerald-400 mt-3 font-medium">
+                          Proper labels, error handling, and ARIA attributes
+                        </p>
                       </div>
-                      <p className="text-xs text-green-400 mt-2">
-                        Proper labels, error handling, and ARIA attributes
-                      </p>
                     </div>
-                  </div>
-                </TabPanel>
+                  </TabPanel>
 
-                {/* Images Panel */}
-                <TabPanel>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Alt Text</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<!-- No alt text -->
+                  {/* Images Panel */}
+                  <TabPanel>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Alt Text</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<!-- No alt text -->
 <img src="chart.png">
 
 <!-- Redundant alt text -->
@@ -280,18 +333,18 @@ const QuickStart: React.FC = () => {
 <!-- Unhelpful alt text -->
 <img src="graph.png" 
      alt="Graph">`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-red-400 mt-3 font-medium">
+                          Screen readers can't convey meaningful information
+                        </p>
                       </div>
-                      <p className="text-xs text-gray-400 mt-2">
-                        Screen readers can't convey meaningful information
-                      </p>
-                    </div>
 
-                    <div>
-                      <h3 className="text-2xl font-semibold text-green-400 mb-4">✅ Descriptive Alt Text</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<!-- Descriptive alt text -->
+                      <div>
+                        <h3 className="text-2xl font-semibold text-emerald-400 mb-4">✅ Descriptive Alt Text</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<!-- Descriptive alt text -->
 <img src="chart.png" 
      alt="Bar chart showing 60% 
      increase in mobile usage 
@@ -307,23 +360,23 @@ const QuickStart: React.FC = () => {
 <img src="decoration.png" 
      alt="" 
      role="presentation">`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-emerald-400 mt-3 font-medium">
+                          Meaningful descriptions that convey the image's purpose
+                        </p>
                       </div>
-                      <p className="text-xs text-green-400 mt-2">
-                        Meaningful descriptions that convey the image's purpose
-                      </p>
                     </div>
-                  </div>
-                </TabPanel>
+                  </TabPanel>
 
-                {/* Navigation Panel */}
-                <TabPanel>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
-                      <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Navigation</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<div class="nav">
+                  {/* Navigation Panel */}
+                  <TabPanel>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      <div>
+                        <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Navigation</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<div class="nav">
   <span onclick="navigate()">
     Home
   </span>
@@ -334,18 +387,18 @@ const QuickStart: React.FC = () => {
 
 <!-- No skip link -->
 <!-- No focus indicators -->`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-red-400 mt-3 font-medium">
+                          Not keyboard accessible, no semantic meaning
+                        </p>
                       </div>
-                      <p className="text-xs text-gray-400 mt-2">
-                        Not keyboard accessible, no semantic meaning
-                      </p>
-                    </div>
 
-                    <div>
-                      <h3 className="text-2xl font-semibold text-green-400 mb-4">✅ Accessible Navigation</h3>
-                      <div className="bg-gray-950 border border-gray-600 rounded-lg p-4 font-mono text-sm">
-                        <pre className="text-gray-200">
-                          {`<!-- Skip link for screen readers -->
+                      <div>
+                        <h3 className="text-2xl font-semibold text-emerald-400 mb-4">✅ Accessible Navigation</h3>
+                        <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
+                          <pre className="text-gray-200">
+                            {`<!-- Skip link for screen readers -->
 <a href="#main" class="skip-link">
   Skip to main content
 </a>
@@ -367,186 +420,217 @@ const QuickStart: React.FC = () => {
 <main id="main">
   <!-- Page content -->
 </main>`}
-                        </pre>
+                          </pre>
+                        </div>
+                        <p className="text-sm text-emerald-400 mt-3 font-medium">
+                          Keyboard accessible with proper ARIA labels
+                        </p>
                       </div>
-                      <p className="text-xs text-green-400 mt-2">
-                        Keyboard accessible with proper ARIA labels
-                      </p>
                     </div>
-                  </div>
-                </TabPanel>
-              </TabPanels>
-            </TabGroup>
+                  </TabPanel>
+                </TabPanels>
+              </TabGroup>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Accessibility Testing Video */}
-      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
-        <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-gray-50">
-            Validate Your Implementation
-          </h2>
-          <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            You've learned what to implement and seen the code examples. Now learn how to test and validate that your accessibility features work correctly.
-          </p>
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="relative aspect-video max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg shadow-black/30">
-              <iframe
-                className="w-full h-full"
-                src="https://www.youtube.com/embed/cOmehxAU_4s"
-                title="How to Test a Website for Accessibility"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                aria-describedby="testing-video-description"
-              ></iframe>
-            </div>
-            <p id="testing-video-description" className="text-base text-gray-400 mt-4 italic">
-              Comprehensive guide to testing websites for accessibility using various tools and techniques.
+      <section className="py-20 lg:py-32 relative">
+        {/* Background decoration */}
+        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-linear-to-br from-orange-500/10 to-yellow-500/10 blur-3xl"></div>
+
+        <div className="container relative text-center">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-orange-400">Validate Your Implementation</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              You've learned what to implement and seen the code examples. Now learn how to test and validate that your accessibility features work correctly.
             </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
+              <div className="aspect-video">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/cOmehxAU_4s"
+                  title="How to Test a Website for Accessibility"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  aria-describedby="testing-video-description"
+                ></iframe>
+              </div>
+              <div className="p-6 bg-white/5 backdrop-blur-sm">
+                <p id="testing-video-description" className="text-sm text-gray-400 text-center italic">
+                  Comprehensive guide to testing websites for accessibility using various tools and techniques.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Testing Tools */}
-      <section className="py-16">
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8 text-center text-gray-50">
-          Essential Testing Tools
-        </h2>
-        <p className="text-center text-gray-200 mb-12 max-w-2xl mx-auto">
-          Here are the specific tools and techniques mentioned in the video to help you validate your accessibility improvements
-        </p>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-          <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Keyboard Testing</h3>
-            <p className="text-gray-200 text-base mb-4">
-              Navigate your entire site using only the Tab, Enter, and arrow keys. Can you reach everything?
+      <section className="py-20 lg:py-32">
+        <div className="container">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-cyan-400">Essential Testing Tools</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              Here are the specific tools and techniques mentioned in the video to help you validate your accessibility improvements
             </p>
-            <div className="text-sm text-blue-500">
-              💡 Try it: Unplug your mouse and navigate this page!
-            </div>
           </div>
 
-          <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-              </svg>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
+              <div className="w-16 h-16 bg-linear-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">Keyboard Testing</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Navigate your entire site using only the Tab, Enter, and arrow keys. Can you reach everything?
+              </p>
+              <div className="text-sm text-blue-400 font-medium">
+                💡 Try it: Unplug your mouse and navigate this page!
+              </div>
             </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Screen Reader</h3>
-            <p className="text-gray-200 text-base mb-4">
-              Test with free screen readers like NVDA (Windows) or VoiceOver (Mac) to hear how your site sounds.
-            </p>
-            <div className="text-sm text-blue-500">
-              💡 Mac: Cmd+F5 to enable VoiceOver
+
+            <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
+              <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300">Screen Reader</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Test with free screen readers like NVDA (Windows) or VoiceOver (Mac) to hear how your site sounds.
+              </p>
+              <div className="text-sm text-emerald-400 font-medium">
+                💡 Mac: Cmd+F5 to enable VoiceOver
+              </div>
+            </div>
+
+            <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
+              <div className="w-16 h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">Browser DevTools</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Use Chrome/Firefox accessibility audits to automatically detect common issues.
+              </p>
+              <div className="text-sm text-purple-400 font-medium">
+                💡 Chrome: F12 → Lighthouse → Accessibility
+              </div>
+            </div>
+
+            <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
+              <div className="w-16 h-16 bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors duration-300">Color Contrast</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Check contrast ratios with tools like WebAIM's contrast checker or Colour Contrast Analyser.
+              </p>
+              <div className="text-sm text-orange-400 font-medium">
+                💡 Minimum: 4.5:1 for normal text
+              </div>
+            </div>
+
+            <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
+              <div className="w-16 h-16 bg-linear-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-pink-400 transition-colors duration-300">WAVE Tool</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Web Accessibility Evaluation Tool provides visual feedback about accessibility issues.
+              </p>
+              <div className="text-sm text-pink-400 font-medium">
+                💡 Available as browser extension
+              </div>
+            </div>
+
+            <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
+              <div className="w-16 h-16 bg-linear-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">User Testing</h3>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                Test with real users who have disabilities. Their feedback is invaluable for improvement.
+              </p>
+              <div className="text-sm text-cyan-400 font-medium">
+                💡 Contact local disability organizations
+              </div>
             </div>
           </div>
-
-          <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Browser DevTools</h3>
-            <p className="text-gray-200 text-base mb-4">
-              Use Chrome/Firefox accessibility audits to automatically detect common issues.
-            </p>
-            <div className="text-sm text-blue-500">
-              💡 Chrome: F12 → Lighthouse → Accessibility
-            </div>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">Color Contrast</h3>
-            <p className="text-gray-200 text-base mb-4">
-              Check contrast ratios with tools like WebAIM's contrast checker or Colour Contrast Analyser.
-            </p>
-            <div className="text-sm text-blue-500">
-              💡 Minimum: 4.5:1 for normal text
-            </div>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">WAVE Tool</h3>
-            <p className="text-gray-200 text-base mb-4">
-              Web Accessibility Evaluation Tool provides visual feedback about accessibility issues.
-            </p>
-            <div className="text-sm text-blue-500">
-              💡 Available as browser extension
-            </div>
-          </div>
-
-          <div className="bg-gray-900 border border-gray-600 p-6 rounded-lg">
-            <div className="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold text-gray-50 mb-3">User Testing</h3>
-            <p className="text-gray-200 text-base mb-4">
-              Test with real users who have disabilities. Their feedback is invaluable for improvement.
-            </p>
-            <div className="text-sm text-blue-500">
-              💡 Contact local disability organizations
-            </div>
-          </div>
-
         </div>
       </section>
 
       {/* Next Steps */}
-      <section className="py-16 text-center bg-gray-900 mx-4 my-16 rounded-none md:rounded-xl">
-        <div className="px-4">
-          <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-50">
-            You're Making a Difference!
-          </h2>
-          <p className="text-base md:text-lg text-gray-200 max-w-3xl mx-auto mb-8 leading-relaxed">
-            With these tools and techniques, you're well on your way to building more inclusive web experiences.
-            Ready to dive deeper into resources and join the community?
-          </p>
+      <section className="py-20 lg:py-32 relative">
+        {/* Background decoration */}
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full bg-linear-to-br from-emerald-500/5 to-blue-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              to="/resources"
-              className="inline-flex items-center bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-            >
-              Explore Resources & Tools
-              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        <div className="container relative text-center">
+          <div className="glass-card rounded-2xl p-12 border border-white/10 max-w-4xl mx-auto">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 mb-8">
+              <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-            </Link>
+            </div>
 
-            <Link
-              to="/why-it-matters"
-              className="inline-flex items-center bg-gray-800 hover:bg-gray-950 border border-gray-600 text-gray-50 px-6 py-4 rounded-lg text-base font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-300 focus:ring-offset-2 focus:ring-offset-gray-900"
-            >
-              ← Back to Why It Matters
-            </Link>
-          </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-emerald-400">You're Making a Difference!</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
+              With these tools and techniques, you're well on your way to building more inclusive web experiences.
+              Ready to dive deeper into resources and join the community?
+            </p>
 
-          <div className="mt-8 text-base text-gray-400">
-            ⏱️ Final section: <span className="text-blue-500">Resources & Community</span> (20 minutes)
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+              <Link
+                to="/resources"
+                className="group px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-xl focus-ring"
+              >
+                <span className="flex items-center">
+                  Explore Resources & Tools
+                  <svg className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </Link>
+
+              <Link
+                to="/why-it-matters"
+                className="group px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white/20 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:bg-white/20 hover:border-white/30 focus-ring"
+              >
+                <span className="flex items-center">
+                  <svg className="mr-3 w-6 h-6 group-hover:-translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                  Back to Why It Matters
+                </span>
+              </Link>
+            </div>
+
+            <div className="text-lg text-gray-400">
+              ⏱️ Final section: <span className="text-emerald-400 font-semibold">Resources & Community</span> (20 minutes)
+            </div>
           </div>
         </div>
       </section>
