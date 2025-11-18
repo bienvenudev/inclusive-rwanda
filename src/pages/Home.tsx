@@ -4,7 +4,7 @@ import { IoAccessibility } from 'react-icons/io5';
 
 const Home: React.FC = () => {
   return (
-    <main id="main-content" className="min-h-[calc(100vh-88px)]">
+    <main id="main-content" className="min-h-[calc(100vh-80px)]">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32">
         {/* Background decoration */}
