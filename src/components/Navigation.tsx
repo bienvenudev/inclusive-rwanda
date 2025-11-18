@@ -43,6 +43,7 @@ const Navigation: React.FC = () => {
                 to="/"
                 onClick={handleLogoClick}
                 className="group flex items-center space-x-2 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 focus-ring"
+                aria-label="Inclusive Rwanda - Go to Home page"
               >
                 <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <span className="text-white font-bold text-sm">
@@ -56,21 +57,24 @@ const Navigation: React.FC = () => {
               </Link>
             </div>
 
-            <nav className="hidden md:flex space-x-1" role="navigation" aria-label="Main navigation">
-              {navItems.map((item) => (
-                <Link
-                  key={item.id}
-                  to={item.path}
-                  onClick={() => handleNavClick(item.path)}
-                  className={`relative px-4 py-2.5 rounded-xl text-base font-medium transition-all duration-300 focus-ring group ${isCurrentPage(item.path)
-                    ? 'bg-purple-600 text-white shadow-lg'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
-                    }`}
-                  aria-current={isCurrentPage(item.path) ? 'page' : undefined}
-                >
-                  <span className="relative z-10">{item.label}</span>
-                </Link>
-              ))}
+            <nav className="hidden md:flex" role="navigation" aria-label="Main navigation">
+              <ul className="flex space-x-1">
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      to={item.path}
+                      onClick={() => handleNavClick(item.path)}
+                      className={`relative px-4 py-2.5 rounded-xl text-base font-medium transition-all duration-300 focus-ring group ${isCurrentPage(item.path)
+                        ? 'bg-purple-600 text-white shadow-lg'
+                        : 'text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
+                        }`}
+                      aria-current={isCurrentPage(item.path) ? 'page' : undefined}
+                    >
+                      <span className="relative z-10">{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
 
             <Menu as="div" className="md:hidden relative">

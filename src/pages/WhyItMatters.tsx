@@ -4,7 +4,7 @@ import { IoAccessibility } from 'react-icons/io5';
 
 const WhyItMatters: React.FC = () => {
   return (
-    <main id="main-content" className="min-h-[calc(100vh-80px)]">
+    <main id="main-content" aria-label="Main content: Why accessibility matters - impact and benefits" className="min-h-[calc(100vh-80px)]">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32">
         {/* Background decoration */}
@@ -119,6 +119,7 @@ const WhyItMatters: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
+              aria-label="1.3 billion people worldwide have a disability that affects their web experience - Source: World Health Organization - Opens in new window"
             >
               <div className="text-5xl font-bold text-blue-400 mb-4 group-hover:text-blue-300 transition-colors duration-300">1.3B</div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-300 transition-colors duration-300">People Worldwide</h3>
@@ -135,6 +136,7 @@ const WhyItMatters: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
+              aria-label="15% of Rwanda's population live with some form of disability - Source: Rwanda Census 2012 - Opens in new window"
             >
               <div className="text-5xl font-bold text-emerald-400 mb-4 group-hover:text-emerald-300 transition-colors duration-300">15%</div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-300 transition-colors duration-300">Of Rwanda's Population</h3>
@@ -151,6 +153,7 @@ const WhyItMatters: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
+              aria-label="94.8% of websites have accessibility barriers that exclude users - Source: WebAIM Million Report - Opens in new window"
             >
               <div className="text-5xl font-bold text-red-400 mb-4 group-hover:text-red-300 transition-colors duration-300">94.8%</div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-red-300 transition-colors duration-300">Of Websites</h3>
@@ -167,6 +170,7 @@ const WhyItMatters: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
+              aria-label="13 trillion dollar global spending power of people with disabilities worldwide - Source: Accenture Research - Opens in new window"
             >
               <div className="text-5xl font-bold text-green-400 mb-4 group-hover:text-green-300 transition-colors duration-300">$13T</div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-300 transition-colors duration-300">Global Market</h3>
@@ -299,52 +303,52 @@ const WhyItMatters: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
               <div className="flex items-center mb-6">
-                <div className="text-4xl mr-4">🇷🇼</div>
+                <span className="text-4xl mr-4" aria-hidden="true">🇷🇼</span>
                 <h3 className="text-2xl font-bold text-green-400">Vision 2050 Alignment</h3>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 Rwanda's Vision 2050 emphasizes leaving no one behind in development. Accessible digital services
                 ensure people with disabilities participate fully in the knowledge economy.
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-400 mr-3"></div>
-                  <span className="text-gray-400">Digital government services for all citizens</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-400 mr-3"></div>
-                  <span className="text-gray-400">Inclusive education through technology</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-green-400 mr-3"></div>
-                  <span className="text-gray-400">Equal economic opportunities</span>
-                </div>
-              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center text-gray-400">
+                  <div className="w-2 h-2 rounded-full bg-green-400 mr-3 shrink-0" aria-hidden="true"></div>
+                  Digital government services for all citizens
+                </li>
+                <li className="flex items-center text-gray-400">
+                  <div className="w-2 h-2 rounded-full bg-green-400 mr-3 shrink-0" aria-hidden="true"></div>
+                  Inclusive education through technology
+                </li>
+                <li className="flex items-center text-gray-400">
+                  <div className="w-2 h-2 rounded-full bg-green-400 mr-3 shrink-0" aria-hidden="true"></div>
+                  Equal economic opportunities
+                </li>
+              </ul>
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
               <div className="flex items-center mb-6">
-                <div className="text-4xl mr-4">🌍</div>
+                <span className="text-4xl mr-4" aria-hidden="true">🌍</span>
                 <h3 className="text-2xl font-bold text-cyan-400">Global Competitiveness</h3>
               </div>
               <p className="text-gray-300 text-lg leading-relaxed mb-6">
                 International companies increasingly require accessibility compliance. Rwandan tech companies
                 with accessibility expertise will have competitive advantages in global markets.
               </p>
-              <div className="space-y-3">
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mr-3"></div>
-                  <span className="text-gray-400">Access to international contracts</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mr-3"></div>
-                  <span className="text-gray-400">Higher-value service offerings</span>
-                </div>
-                <div className="flex items-center">
-                  <div className="w-2 h-2 rounded-full bg-cyan-400 mr-3"></div>
-                  <span className="text-gray-400">Reputation as inclusive innovators</span>
-                </div>
-              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center text-gray-400">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mr-3 shrink-0" aria-hidden="true"></div>
+                  Access to international contracts
+                </li>
+                <li className="flex items-center text-gray-400">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mr-3 shrink-0" aria-hidden="true"></div>
+                  Higher-value service offerings
+                </li>
+                <li className="flex items-center text-gray-400">
+                  <div className="w-2 h-2 rounded-full bg-cyan-400 mr-3 shrink-0" aria-hidden="true"></div>
+                  Reputation as inclusive innovators
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -388,7 +392,7 @@ const WhyItMatters: React.FC = () => {
           </div>
 
           <div className="mt-8 text-sm text-gray-400">
-            ⏱️ Next section: <span className="text-purple-400">Quick Start Guide</span> (25 minutes)
+            <span aria-hidden="true">⏱️ </span>Next section: <span className="text-purple-400">Quick Start Guide</span> (25 minutes)
           </div>
         </div>
       </section>
