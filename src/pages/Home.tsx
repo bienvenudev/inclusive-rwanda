@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { IoAccessibility } from 'react-icons/io5';
 
 const Home: React.FC = () => {
   return (
@@ -14,20 +15,19 @@ const Home: React.FC = () => {
 
         <div className="container relative">
           <div className="text-center max-w-4xl mx-auto">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-sm font-medium text-purple-300 mb-8 floating-element">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
-              Building Rwanda's Digital Future
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-8 floating-element">
+              <IoAccessibility className="w-8 h-8 text-purple-300" />
             </div>
 
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              <span className="gradient-text bg-linear-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight font-display">
+              <span className="text-purple-400">
                 Inclusive
               </span>
               <br />
               <span className="text-white">Rwanda</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-300 mb-6 font-medium leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-6 font-medium leading-relaxed font-alt">
               Building a more accessible web for everyone in Rwanda and beyond
             </p>
 
@@ -47,7 +47,7 @@ const Home: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 to="/quick-start"
-                className="group px-8 py-4 bg-gradient-primary text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/25 hover:-translate-y-1 focus-ring"
+                className="group px-8 py-4 bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 focus-ring"
               >
                 <span className="flex items-center">
                   Get Started
@@ -72,8 +72,8 @@ const Home: React.FC = () => {
       <section className="py-20 lg:py-32">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text bg-linear-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-blue-400">
                 Introduction
               </span>
             </h2>
@@ -84,7 +84,7 @@ const Home: React.FC = () => {
           </div>
 
           <div className="max-w-5xl mx-auto">
-            <div className="glass-card rounded-2xl overflow-hidden shadow-2xl floating-element">
+            <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
@@ -113,8 +113,8 @@ const Home: React.FC = () => {
 
         <div className="container relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text bg-linear-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-emerald-400">
                 What is Web Accessibility?
               </span>
             </h2>
@@ -170,7 +170,7 @@ const Home: React.FC = () => {
 
           {/* Second Video */}
           <div className="max-w-5xl mx-auto">
-            <div className="glass-card rounded-2xl overflow-hidden shadow-2xl floating-element">
+            <div className="glass-card rounded-2xl overflow-hidden shadow-2xl">
               <div className="aspect-video">
                 <iframe
                   className="w-full h-full"
@@ -196,8 +196,8 @@ const Home: React.FC = () => {
       <section className="py-20 lg:py-32">
         <div className="container">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text bg-linear-to-r from-orange-400 to-pink-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-orange-400">
                 Why Start Here?
               </span>
             </h2>
@@ -242,8 +242,8 @@ const Home: React.FC = () => {
 
         <div className="container relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-purple-400">
                 See Accessibility in Action
               </span>
             </h2>
@@ -418,8 +418,8 @@ const Home: React.FC = () => {
 
         <div className="container relative">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text bg-linear-to-r from-pink-400 to-orange-400 bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+              <span className="text-pink-400">
                 Take Action Now
               </span>
             </h2>
@@ -539,8 +539,8 @@ const Home: React.FC = () => {
         <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full bg-linear-to-br from-purple-500/5 to-blue-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
 
         <div className="container relative text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="gradient-text bg-linear-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
+            <span className="text-purple-400">
               Ready to Start Your Journey?
             </span>
           </h2>
@@ -551,7 +551,7 @@ const Home: React.FC = () => {
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link
               to="/why-it-matters"
-              className="group px-10 py-5 bg-gradient-primary text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/25 hover:-translate-y-2 focus-ring"
+              className="group px-10 py-5 bg-purple-600 hover:bg-purple-500 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-xl hover:-translate-y-2 focus-ring"
             >
               <span className="flex items-center">
                 Continue Learning: Why It Matters

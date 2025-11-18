@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
+import { IoAccessibility } from 'react-icons/io5';
 
 const Navigation: React.FC = () => {
   const location = useLocation();
@@ -29,7 +30,7 @@ const Navigation: React.FC = () => {
     <>
       <a
         href="#main-content"
-        className="skip-link fixed top-4 left-4 bg-gradient-primary text-white px-6 py-3 rounded-xl text-sm font-medium z-50 transform -translate-y-full opacity-0 focus:translate-y-0 focus:opacity-100 transition-all duration-300 focus-ring shadow-xl"
+        className="skip-link fixed top-4 left-4 bg-purple-600 text-white px-6 py-3 rounded-xl text-sm font-medium z-50 transform -translate-y-full opacity-0 focus:translate-y-0 focus:opacity-100 transition-all duration-300 focus-ring shadow-xl"
       >
         Skip to main content
       </a>
@@ -43,10 +44,13 @@ const Navigation: React.FC = () => {
                 onClick={handleLogoClick}
                 className="group flex items-center space-x-2 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 focus-ring"
               >
-                <div className="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-sm">IR</span>
+                <div className="w-8 h-8 rounded-lg bg-purple-600 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-white font-bold text-sm">
+                    <IoAccessibility className="w-8 h-8 text-purple-300" />
+
+                  </span>
                 </div>
-                <span className="gradient-text text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                <span className="text-white text-xl font-bold font-display">
                   Inclusive Rwanda
                 </span>
               </Link>
@@ -58,16 +62,13 @@ const Navigation: React.FC = () => {
                   key={item.id}
                   to={item.path}
                   onClick={() => handleNavClick(item.path)}
-                  className={`relative px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 focus-ring group ${isCurrentPage(item.path)
-                    ? 'bg-gradient-primary text-white shadow-lg'
+                  className={`relative px-4 py-2.5 rounded-xl text-base font-medium transition-all duration-300 focus-ring group ${isCurrentPage(item.path)
+                    ? 'bg-purple-600 text-white shadow-lg'
                     : 'text-gray-300 hover:text-white hover:bg-white/10 hover:backdrop-blur-sm'
                     }`}
                   aria-current={isCurrentPage(item.path) ? 'page' : undefined}
                 >
                   <span className="relative z-10">{item.label}</span>
-                  {!isCurrentPage(item.path) && (
-                    <div className="absolute inset-0 rounded-xl bg-gradient-primary opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                  )}
                 </Link>
               ))}
             </nav>
@@ -88,8 +89,8 @@ const Navigation: React.FC = () => {
                       <Link
                         to={item.path}
                         onClick={() => handleNavClick(item.path)}
-                        className={`flex items-center w-full text-left px-4 py-3 text-sm transition-all duration-200 ${isCurrentPage(item.path)
-                          ? 'bg-gradient-primary text-white font-semibold'
+                        className={`flex items-center w-full text-left px-4 py-3 text-base transition-all duration-200 ${isCurrentPage(item.path)
+                          ? 'bg-purple-600 text-white font-semibold'
                           : 'text-gray-200 hover:text-white hover:bg-white/10 data-focus:bg-white/10 data-focus:text-white'
                           }`}
                         aria-current={isCurrentPage(item.path) ? 'page' : undefined}
