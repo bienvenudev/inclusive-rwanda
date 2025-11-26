@@ -64,7 +64,7 @@ const WhyItMatters: React.FC = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-emerald-400">
+              <span className="text-white">
                 Understanding Disability
               </span>
             </h2>
@@ -104,7 +104,7 @@ const WhyItMatters: React.FC = () => {
         <div className="container relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-cyan-400">
+              <span className="text-white">
                 The Numbers Don't Lie
               </span>
             </h2>
@@ -132,7 +132,7 @@ const WhyItMatters: React.FC = () => {
               </div>
             </a>
             <a
-              href="https://www.statistics.gov.rw/publication/disability-rwanda-census-2012"
+              href="https://alpha.statistics.gov.rw/sites/default/files/documents/2025-07/RPHC4_%20Disability.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
@@ -166,17 +166,17 @@ const WhyItMatters: React.FC = () => {
               </div>
             </a>
             <a
-              href="https://www.accenture.com/us-en/insights/consulting/disability-inclusion-research"
+              href="https://www.rod-group.com/wp-content/uploads/2024/09/The-Global-Economics-of-Disability-2024-The-Return-on-Disability-Group-September-24-2024.pdf?https%3A%2F%2Fwww.rod-group.com%2Fresearch-insights%2Fannual-report-2024%2F"
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
-              aria-label="13 trillion dollar global spending power of people with disabilities worldwide - Source: Accenture Research - Opens in new window"
+              aria-label="18 trillion dollar global spending power of people with disabilities worldwide - Source: Return on Disability Group - Opens in new window"
             >
-              <div className="text-5xl font-bold text-green-400 mb-4 group-hover:text-green-300 transition-colors duration-300">$13T</div>
+              <div className="text-5xl font-bold text-green-400 mb-4 group-hover:text-green-300 transition-colors duration-300">$18T</div>
               <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-green-300 transition-colors duration-300">Global Market</h3>
               <p className="text-gray-300 leading-relaxed mb-4">spending power of people with disabilities worldwide</p>
               <div className="text-sm text-green-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <span>Source: Accenture Research</span>
+                <span>Source: Return on Disability Group</span>
                 <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -191,7 +191,7 @@ const WhyItMatters: React.FC = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-orange-400">
+              <span className="text-white">
                 The Business Case
               </span>
             </h2>
@@ -225,9 +225,6 @@ const WhyItMatters: React.FC = () => {
 
       {/* Business Benefits */}
       <section className="py-20 lg:py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute top-1/2 left-0 w-96 h-96 rounded-full bg-linear-to-br from-purple-500/10 to-blue-500/10 blur-3xl -translate-y-1/2"></div>
-
         <div className="container relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
@@ -242,7 +239,7 @@ const WhyItMatters: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-emerald-500 to-emerald-600 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-purple-600 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -268,7 +265,7 @@ const WhyItMatters: React.FC = () => {
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center">
-              <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-orange-500 to-orange-600 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-purple-600 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -285,13 +282,10 @@ const WhyItMatters: React.FC = () => {
 
       {/* Rwanda Context */}
       <section className="py-20 lg:py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-linear-to-br from-green-500/10 to-emerald-500/10 blur-3xl"></div>
-
         <div className="container relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-green-400">
+              <span className="text-white">
                 Rwanda's Digital Vision
               </span>
             </h2>

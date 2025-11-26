@@ -14,7 +14,7 @@ const QuickStart: React.FC = () => {
   };
 
   return (
-    <main id="main-content" className="min-h-[calc(100vh-80px)]">
+    <main id="main-content" aria-label="Main content: Quick Start Guide - tips for accessibility" className="min-h-[calc(100vh-80px)]">
       {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32">
         {/* Background decoration */}
@@ -51,7 +51,7 @@ const QuickStart: React.FC = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-emerald-400">Your Accessibility Checklist</span>
+              <span className="text-white">Your Accessibility Checklist</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Start with these high-impact, easy-to-implement improvements. Check them off as you go!
@@ -78,8 +78,8 @@ const QuickStart: React.FC = () => {
                 <button
                   onClick={() => toggleCheck(item.id)}
                   className={`w-8 h-8 rounded-xl border-2 mr-6 flex items-center justify-center transition-all duration-300 focus-ring ${checkedItems.includes(item.id)
-                    ? 'bg-emerald-500 border-emerald-500 text-white scale-110'
-                    : 'border-white/30 hover:border-emerald-500 group-hover:scale-110'
+                    ? 'bg-purple-500 border-purple-500 text-white scale-110'
+                    : 'border-white/30 hover:border-purple-500 group-hover:scale-110'
                     }`}
                   aria-label={`Toggle ${item.text}`}
                 >
@@ -94,9 +94,9 @@ const QuickStart: React.FC = () => {
                     <span className={`text-lg font-medium text-white ${checkedItems.includes(item.id) ? 'line-through opacity-60' : ''}`}>
                       {item.text}
                     </span>
-                    <span className={`w-fit px-3 py-1 rounded-full text-xs font-semibold ${item.impact === 'High' ? 'bg-red-500/20 text-red-400 border border-red-500/30' :
-                      item.impact === 'Medium' ? 'bg-yellow-500/20 text-yellow-400 border border-yellow-500/30' :
-                        'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                    <span className={`w-fit px-3 py-1 rounded-full text-xs font-semibold ${item.impact === 'High' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
+                      item.impact === 'Medium' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
+                        'bg-gray-500/20 text-gray-400 border border-gray-500/30'
                       }`}>
                       {item.impact} Impact
                     </span>
@@ -109,11 +109,11 @@ const QuickStart: React.FC = () => {
           <div className="text-center mt-12">
             <div className="glass-card rounded-2xl p-8 max-w-md mx-auto border border-white/10">
               <div className="text-2xl font-bold text-white mb-4">
-                Progress: <span className="text-emerald-400">{checkedItems.length}/10</span> completed
+                Progress: <span className="text-purple-400">{checkedItems.length}/10</span> completed
               </div>
               <div className="w-full bg-white/10 rounded-full h-3 mb-2">
                 <div
-                  className="bg-linear-to-r from-emerald-500 to-cyan-500 h-3 rounded-full transition-all duration-500 ease-out"
+                  className="bg-purple-500 h-3 rounded-full transition-all duration-500 ease-out"
                   style={{ width: `${(checkedItems.length / 10) * 100}%` }}
                 ></div>
               </div>
@@ -130,16 +130,13 @@ const QuickStart: React.FC = () => {
 
       {/* Accessibility Tips Video */}
       <section className="py-20 lg:py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute top-0 left-0 w-72 h-72 rounded-full bg-linear-to-br from-blue-500/10 to-purple-500/10 blur-3xl"></div>
-
         <div className="container relative text-center">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-blue-400">Essential Implementation Tips</span>
+              <span className="text-white">Essential Implementation Tips</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Now that you know what to implement, watch these practical tips to learn <em className="text-blue-400">how</em> to do it effectively.
+              Now that you know what to implement, watch these practical tips to learn <em className="text-purple-400">how</em> to do it effectively.
             </p>
           </div>
 
@@ -168,13 +165,10 @@ const QuickStart: React.FC = () => {
 
       {/* Code Examples Tabs */}
       <section className="py-20 lg:py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full bg-linear-to-br from-purple-500/10 to-pink-500/10 blur-3xl -translate-y-1/2"></div>
-
         <div className="container relative">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-purple-400">Code Examples & Best Practices</span>
+              <span className="text-white">Code Examples & Best Practices</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               See practical before-and-after examples of accessible code implementation.
@@ -204,7 +198,7 @@ const QuickStart: React.FC = () => {
                   <TabPanel>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                       <div>
-                        <h3 className="text-2xl font-semibold text-red-400 mb-4">❌ Poor Structure</h3>
+                        <h3 className="text-2xl font-semibold text-gray-400 mb-4">❌ Poor Structure</h3>
                         <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
                           <pre className="text-gray-200">
                             {`<div class="header">
@@ -226,7 +220,7 @@ const QuickStart: React.FC = () => {
                       </div>
 
                       <div>
-                        <h3 className="text-2xl font-semibold text-emerald-400 mb-4">✅ Semantic Structure</h3>
+                        <h3 className="text-2xl font-semibold text-white mb-4">✅ Semantic Structure</h3>
                         <div className="bg-black/40 backdrop-blur-sm border border-white/20 rounded-xl p-6 font-mono text-sm">
                           <pre className="text-gray-200">
                             {`<header>
@@ -437,13 +431,10 @@ const QuickStart: React.FC = () => {
 
       {/* Accessibility Testing Video */}
       <section className="py-20 lg:py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full bg-linear-to-br from-orange-500/10 to-yellow-500/10 blur-3xl"></div>
-
         <div className="container relative text-center">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-orange-400">Validate Your Implementation</span>
+              <span className="text-white">Validate Your Implementation</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               You've learned what to implement and seen the code examples. Now learn how to test and validate that your accessibility features work correctly.
@@ -478,7 +469,7 @@ const QuickStart: React.FC = () => {
         <div className="container">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-cyan-400">Essential Testing Tools</span>
+              <span className="text-white">Essential Testing Tools</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
               Here are the specific tools and techniques mentioned in the video to help you validate your accessibility improvements
@@ -487,38 +478,38 @@ const QuickStart: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
-              <div className="w-16 h-16 bg-linear-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">Keyboard Testing</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">Keyboard Testing</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Navigate your entire site using only the Tab, Enter, and arrow keys. Can you reach everything?
               </p>
-              <div className="text-sm text-blue-400 font-medium">
+              <div className="text-sm text-purple-400 font-medium">
                 💡 Try it: Unplug your mouse and navigate this page!
               </div>
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
-              <div className="w-16 h-16 bg-linear-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors duration-300">Screen Reader</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">Screen Reader</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Test with free screen readers like NVDA (Windows) or VoiceOver (Mac) to hear how your site sounds.
               </p>
-              <div className="text-sm text-emerald-400 font-medium">
+              <div className="text-sm text-blue-400 font-medium">
                 💡 Mac: Cmd+F5 to enable VoiceOver
               </div>
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
-              <div className="w-16 h-16 bg-linear-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -534,46 +525,46 @@ const QuickStart: React.FC = () => {
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
-              <div className="w-16 h-16 bg-linear-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-orange-400 transition-colors duration-300">Color Contrast</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">Color Contrast</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Check contrast ratios with tools like WebAIM's contrast checker or Colour Contrast Analyser.
               </p>
-              <div className="text-sm text-orange-400 font-medium">
+              <div className="text-sm text-blue-400 font-medium">
                 💡 Minimum: 4.5:1 for normal text
               </div>
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
-              <div className="w-16 h-16 bg-linear-to-br from-pink-500 to-pink-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-pink-400 transition-colors duration-300">WAVE Tool</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-purple-400 transition-colors duration-300">WAVE Tool</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Web Accessibility Evaluation Tool provides visual feedback about accessibility issues.
               </p>
-              <div className="text-sm text-pink-400 font-medium">
+              <div className="text-sm text-purple-400 font-medium">
                 💡 Available as browser extension
               </div>
             </div>
 
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10">
-              <div className="w-16 h-16 bg-linear-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-cyan-400 transition-colors duration-300">User Testing</h3>
+              <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors duration-300">User Testing</h3>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Test with real users who have disabilities. Their feedback is invaluable for improvement.
               </p>
-              <div className="text-sm text-cyan-400 font-medium">
+              <div className="text-sm text-blue-400 font-medium">
                 💡 Contact local disability organizations
               </div>
             </div>
@@ -583,19 +574,16 @@ const QuickStart: React.FC = () => {
 
       {/* Next Steps */}
       <section className="py-20 lg:py-32 relative">
-        {/* Background decoration */}
-        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full bg-linear-to-br from-emerald-500/5 to-blue-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-
         <div className="container relative text-center">
           <div className="glass-card rounded-2xl p-12 border border-white/10 max-w-4xl mx-auto">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 mb-8">
-              <svg className="w-8 h-8 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-500/20 border border-purple-500/30 mb-8">
+              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">
-              <span className="text-emerald-400">You're Making a Difference!</span>
+              <span className="text-white">You're Making a Difference!</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-12 leading-relaxed">
               With these tools and techniques, you're well on your way to building more inclusive web experiences.
@@ -605,7 +593,7 @@ const QuickStart: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
               <Link
                 to="/resources"
-                className="group px-10 py-5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-xl focus-ring"
+                className="group px-10 py-5 bg-purple-600 hover:bg-purple-500 text-white rounded-2xl text-xl font-semibold transition-all duration-300 hover:shadow-xl focus-ring"
               >
                 <span className="flex items-center">
                   Explore Resources & Tools
@@ -629,7 +617,7 @@ const QuickStart: React.FC = () => {
             </div>
 
             <div className="text-lg text-gray-400">
-              ⏱️ Final section: <span className="text-emerald-400 font-semibold">Resources & Community</span> (20 minutes)
+              ⏱️ Final section: <span className="text-purple-400 font-semibold">Resources & Community</span> (20 minutes)
             </div>
           </div>
         </div>

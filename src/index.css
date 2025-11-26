@@ -4,7 +4,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* Modern Scrimba-inspired color palette */
+  /* Minimal color palette - 3 colors max */
   --color-gray-950: #0a0a0f;
   --color-gray-900: #13131a;
   --color-gray-800: #1e1e28;
@@ -17,37 +17,15 @@
   --color-gray-100: #f0f0f3;
   --color-gray-50: #f8f8fa;
 
-  /* Vibrant primary colors */
+  /* Primary color - purple for interactive elements */
   --color-purple-500: #8b5cf6;
   --color-purple-600: #7c3aed;
-  --color-purple-700: #6d28d9;
   --color-purple-400: #a78bfa;
   --color-purple-300: #c4b5fd;
 
-  --color-pink-500: #ec4899;
-  --color-pink-600: #db2777;
-  --color-pink-400: #f472b6;
-
+  /* Accent color - blue for links only */
   --color-blue-500: #3b82f6;
   --color-blue-600: #2563eb;
-  --color-blue-400: #60a5fa;
-  --color-blue-300: #93c5fd;
-  --color-blue-700: #1d4ed8;
-
-  --color-cyan-500: #06b6d4;
-  --color-cyan-400: #22d3ee;
-
-  --color-emerald-500: #10b981;
-  --color-emerald-400: #34d399;
-
-  --color-orange-500: #f97316;
-  --color-orange-400: #fb923c;
-
-  --color-yellow-500: #eab308;
-  --color-yellow-400: #facc15;
-
-  --color-red-500: #ef4444;
-  --color-red-400: #f87171;
 
   /* Current: Lexend Deca as primary, Inter Tight as display/alt */
   /* --font-family-sans: "Lexend Deca", "Inter", -apple-system, BlinkMacSystemFont,
@@ -77,11 +55,7 @@
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1),
     0 8px 10px -6px rgb(0 0 0 / 0.1);
 
-  /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #8b5cf6, #ec4899);
-  --gradient-secondary: linear-gradient(135deg, #3b82f6, #06b6d4);
-  --gradient-accent: linear-gradient(135deg, #10b981, #eab308);
-  --gradient-warm: linear-gradient(135deg, #f97316, #ec4899);
+  /* No gradients - clean solid colors only */
 
   /* Focus outline */
   --focus-outline: #8b5cf6;
@@ -104,11 +78,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  background: linear-gradient(
-    180deg,
-    var(--color-gray-950) 0%,
-    var(--color-gray-900) 100%
-  );
+  background: var(--color-gray-950);
   color: var(--color-gray-100);
   font-family: var(--font-family-sans);
   font-size: var(--font-size-base);
@@ -127,7 +97,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--gradient-primary);
+  background: var(--color-purple-500);
   border-radius: 4px;
 }
 
@@ -229,8 +199,8 @@ body {
 
 /* Custom selection */
 ::selection {
-  background: rgba(139, 92, 246, 0.3);
-  color: var(--color-gray-100);
+  background: var(--color-purple-500);
+  color: white;
 }
 
 /* Responsive design */
