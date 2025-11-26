@@ -95,7 +95,7 @@ const QuickStart: React.FC = () => {
                       {item.text}
                     </span>
                     <span className={`w-fit px-3 py-1 rounded-full text-xs font-semibold ${item.impact === 'High' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
-                      item.impact === 'Medium' ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30' :
+                      item.impact === 'Medium' ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30' :
                         'bg-gray-500/20 text-gray-400 border border-gray-500/30'
                       }`}>
                       {item.impact} Impact
