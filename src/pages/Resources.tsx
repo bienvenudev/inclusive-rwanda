@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from '@headlessui/react';
+import FeedbackForm from '../components/FeedbackForm';
 
 const Resources: React.FC = () => {
+  const [showFeedback, setShowFeedback] = useState(false);
+
   const categories = [
     { id: 'tools', label: 'Tools & Extensions', icon: '🛠️', count: '15+', description: 'Browser extensions and development tools' },
     { id: 'learning', label: 'Learning Resources', icon: '📚', count: '20+', description: 'Courses, documentation, and guides' },
@@ -694,6 +697,150 @@ const Resources: React.FC = () => {
         </TabPanels>
       </TabGroup>
 
+      {/* Contribute to this Project Section */}
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 border border-blue-500/20 rounded-3xl p-12">
+              <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="lg:w-2/3">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-500/20 border border-blue-500/30 mb-6">
+                    <svg className="w-8 h-8 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+
+                  <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                    Contribute to This Project
+                  </h2>
+                  <p className="text-lg text-gray-300 leading-relaxed mb-6">
+                    Found a bug? Have an idea for improvement? This project is open source and welcomes contributions from developers who want to make accessibility education better for everyone.
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <div className="flex items-start">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 mt-2 shrink-0"></span>
+                      <div>
+                        <h4 className="text-white font-medium">Fix Issues</h4>
+                        <p className="text-gray-400 text-sm">Submit PRs for bugs, accessibility improvements, or performance optimizations</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 shrink-0"></span>
+                      <div>
+                        <h4 className="text-white font-medium">Add Features</h4>
+                        <p className="text-gray-400 text-sm">Contribute new educational content, tools, or interactive features</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="w-2 h-2 bg-blue-400 rounded-full mr-3 mt-2 shrink-0"></span>
+                      <div>
+                        <h4 className="text-white font-medium">Improve Docs</h4>
+                        <p className="text-gray-400 text-sm">Enhance documentation, examples, or add translations</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="w-2 h-2 bg-purple-400 rounded-full mr-3 mt-2 shrink-0"></span>
+                      <div>
+                        <h4 className="text-white font-medium">Share Knowledge</h4>
+                        <p className="text-gray-400 text-sm">Add Rwanda-specific resources or accessibility insights</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:w-1/3">
+                  <div className="bg-gray-800/50 border border-gray-700/50 rounded-2xl p-8">
+                    <div className="text-center mb-6">
+                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-gray-700 mb-4">
+                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.918.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.479C19.137 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2z" />
+                        </svg>
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">GitHub Repository</h3>
+                      <p className="text-gray-400 text-sm mb-6">View the source code, submit issues, or create pull requests</p>
+                    </div>
+
+                    <div className="space-y-3">
+                      <a
+                        href="https://github.com/bienvenudev/inclusive-rwanda"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-medium transition-all duration-200 group"
+                      >
+                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                          <path fillRule="evenodd" d="M12 2C6.477 2 2 6.463 2 11.97c0 4.404 2.865 8.14 6.839 9.458.5.092.682-.216.682-.48 0-.236-.008-.864-.013-1.695-2.782.602-3.369-1.337-3.369-1.337-.454-1.151-1.11-1.458-1.11-1.458-.908-.618.069-.606.069-.606 1.003.07 1.531 1.027 1.531 1.027.892 1.524 2.341 1.084 2.91.828.092-.643.35-1.083.636-1.332-2.22-.251-4.555-1.107-4.555-4.927 0-1.088.39-1.979 1.029-2.675-.103-.252-.446-1.266.098-2.638 0 0 .84-.268 2.75 1.022A9.606 9.606 0 0112 6.82c.85.004 1.705.114 2.504.336 1.909-1.29 2.747-1.022 2.747-1.022.546 1.372.202 2.386.1 2.638.64.696 1.028 1.587 1.028 2.675 0 3.83-2.339 4.673-4.566 4.918.359.307.678.915.678 1.846 0 1.332-.012 2.407-.012 2.734 0 .267.18.577.688.479C19.137 20.107 22 16.373 22 11.969 22 6.463 17.522 2 12 2z" />
+                        </svg>
+                        View on GitHub
+                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </a>
+
+                      <div className="flex gap-2">
+                        <a
+                          href="https://github.com/bienvenudev/inclusive-rwanda/issues"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center bg-gray-700 hover:bg-gray-600 text-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                        >
+                          Report Issue
+                        </a>
+                        <a
+                          href="https://github.com/bienvenudev/inclusive-rwanda/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 text-center bg-gray-700 hover:bg-gray-600 text-gray-200 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200"
+                        >
+                          First Issues
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Help Us Improve Section */}
+      <section className="py-20 lg:py-32">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center bg-purple-600/10 border border-purple-500/20 rounded-3xl p-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-purple-500/20 border border-purple-500/30 mb-8">
+              <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+              Share Your Feedback
+            </h2>
+            <p className="text-lg text-gray-300 leading-relaxed mb-8">
+              Have questions, suggestions, or want to share your accessibility challenges? For quick feedback or questions, use our feedback form. For code contributions or detailed issues, visit our GitHub repository above.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <button
+                onClick={() => setShowFeedback(true)}
+                className="inline-flex items-center bg-purple-600 hover:bg-purple-500 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 focus:ring-offset-gray-900"
+              >
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+                Send Quick Feedback
+              </button>
+
+              <p className="text-gray-400 text-sm">
+                Your input helps make this resource better for everyone
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Call to Action */}
       <section className="py-20 lg:py-32">
         <div className="container mx-auto px-6">
@@ -732,6 +879,8 @@ const Resources: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {showFeedback && <FeedbackForm onClose={() => setShowFeedback(false)} />}
     </main>
   );
 };
