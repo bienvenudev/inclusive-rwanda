@@ -5,12 +5,12 @@ import { IoAccessibility } from 'react-icons/io5';
 const Home: React.FC = () => {
   return (
     <main id="main-content" aria-label="Main content: Inclusive Rwanda accessibility guide homepage" className="min-h-[calc(100vh-80px)]">
-            {/* Hero Section */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden py-20 lg:py-32">
         {/* Background decoration */}
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-32 w-80 h-80 rounded-full bg-linear-to-br from-purple-500/20 to-pink-500/20 blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-32 w-80 h-80 rounded-full bg-linear-to-br from-blue-500/20 to-cyan-500/20 blur-3xl"></div>
+          <div className="absolute -top-40 -right-32 w-80 h-80 rounded-full from-purple-500/20 to-pink-500/20 blur-3xl"></div>
+          <div className="absolute -bottom-40 -left-32 w-80 h-80 rounded-full from-blue-500/20 to-cyan-500/20 blur-3xl"></div>
         </div>
 
         <div className="container relative">
@@ -490,7 +490,7 @@ const Home: React.FC = () => {
 
             {/* Share This Resource */}
             <div className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center">
-              <div className="w-16 h-16 bg-linear-to-br bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
                 </svg>
@@ -533,7 +533,7 @@ const Home: React.FC = () => {
       {/* Get Started Section */}
       <section className="py-20 lg:py-32 relative">
         {/* Background decoration */}
-        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full bg-linear-to-br from-purple-500/5 to-blue-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute top-1/2 left-1/2 w-[600px] h-[600px] rounded-full from-purple-500/5 to-blue-500/5 blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
 
         <div className="container relative text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display">

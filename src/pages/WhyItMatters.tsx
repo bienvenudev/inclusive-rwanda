@@ -132,7 +132,7 @@ const WhyItMatters: React.FC = () => {
               </div>
             </a>
             <a
-              href="https://alpha.statistics.gov.rw/sites/default/files/documents/2014-07/RPHC4_%20Disability.pdf"
+              href="https://alpha.statistics.gov.rw/sites/default/files/documents/2025-07/RPHC4_%20Disability.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="group glass-card p-8 rounded-2xl glow-on-hover border border-white/10 text-center focus-ring"
