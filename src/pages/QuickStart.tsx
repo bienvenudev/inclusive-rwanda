@@ -136,7 +136,7 @@ const QuickStart: React.FC = () => {
               <span className="text-white">Essential Implementation Tips</span>
             </h2>
             <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-              Now that you know what to implement, watch these practical tips to learn <em className="text-blue-400">how</em> to do it effectively.
+              Now that you know what to implement, watch these practical tips to learn <em className="text-purple-400">how</em> to do it effectively.
             </p>
           </div>
 
