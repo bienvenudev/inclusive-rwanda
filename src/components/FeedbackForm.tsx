@@ -74,13 +74,16 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50" role="presentation">
       <div
         ref={modalRef}
         className="bg-gray-900 border border-gray-600 rounded-2xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="feedback-dialog-title"
       >
         <div className="flex items-center justify-between mb-6">
-          <h2 className="text-2xl font-bold text-white">Share Your Feedback</h2>
+          <h2 id="feedback-dialog-title" className="text-2xl font-bold text-white">Share Your Feedback</h2>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 rounded-lg p-1"
