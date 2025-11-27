@@ -184,7 +184,7 @@ const FeedbackForm: React.FC<FeedbackFormProps> = ({ onClose }) => {
             {submitStatus === 'error' && (
               <div className="bg-red-500/20 border border-red-500/30 rounded-lg p-4">
                 <p className="text-red-400 text-sm">
-                  Failed to send feedback. Please try again or contact us directly at feedback@inclusive-rwanda.com
+                  Failed to send feedback. Please try again or contact us directly at b.cyuzuzo@alustudent.com
                 </p>
               </div>
             )}
