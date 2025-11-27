@@ -196,16 +196,24 @@ npm install @types/node @types/react @types/react-dom --save-dev
 
 ## 📝 Contributing
 
-This project was created for educational purposes as part of ALU's software engineering program.
+**Contributions welcome!** Quick guide for developers:
 
-### Local Development Workflow
+1. **Fork & clone** → `npm install` → `npm run dev`
+2. **Create feature branch** → **make changes** → **test thoroughly**
+3. **Submit PR** with clear description
 
-1. **Create a new branch**: `git checkout -b feature/your-feature-name`
-2. **Make changes**: Edit files and test locally
-3. **Test thoroughly**: Run `npm run build` to ensure production build works
-4. **Check accessibility**: Use screen readers and accessibility tools
-5. **Commit changes**: `git commit -m "Add feature description"`
-6. **Push to repository**: `git push origin feature/your-feature-name`
+**We welcome:**
+- 🐛 Bug fixes and accessibility improvements
+- ✨ New features and educational content  
+- 📚 Documentation enhancements
+- 🎨 Performance optimizations
+
+**Before contributing:**
+- See detailed guidelines in [CONTRIBUTING.md](.github/CONTRIBUTING.md)
+- Check [good first issues](https://github.com/bienvenudev/inclusive-rwanda/labels/good%20first%20issue)
+- Ensure accessibility testing (screen readers, keyboard navigation, WCAG compliance)
+
+**Quick setup:** Fork → `git clone` → `npm install` → `git checkout -b feature/your-change` → code → `npm run build` → PR
 
 ## 📚 Learning Resources
 
